@@ -10,15 +10,8 @@
 </head>
 <body>
 
-	{% if generateToc %}
-	<nav class="toc">
-		<h1>Items</h1>
-		<ol>
-			{% for item in items %}
-			<li class="toc__line"><a href="#{{ item._id }}">{{ item.title }}</a></li>
-			{% endfor %}
-		</ol>
-	</nav>
+	{% if blueprint.toc.generate %}
+	{% include blueprint.toc.template %}
 	{% endif %}
 
 	{% for item in items %}

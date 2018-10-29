@@ -84,10 +84,6 @@ pre code {
 	display: none;
 }
 
-nav.toc {
-	page-break-after: always;
-}
-
 /*
 	Article formatting
 	----------------------------------------------------
