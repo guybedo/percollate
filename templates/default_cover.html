@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>🌐 Percollate</title>
+
+	<style type='text/css'>
+		{{ style }}
+	</style>
+</head>
+<body>
+	{% for item in items %}
+	<article class='article'>
+		<header class='article__header'>
+			<h1 class='article__title'>
+				{{ item.title }}
+			</h1>
+			{% if item.byline %}
+				<p class='article__byline'>
+					By <span>{{ item.byline }}</span>
+				</p>
+			{% endif %}
+			<p class='article__url'>
+				Source: 
+				<a class='no-href' href="{{item.url}}">{{item.url}}</a>
+			</p>
+		</header>
+
+		<div class='article__content'>
+			{{ item.content }}
+		</div>
+	</article>
+	{% endfor %}
+
+	<!-- Template to use for page footer -->
+	<template class='footer-template'>
+		<div class='text center'>
+			<span class='pageNumber'></span>
+		</div>
+	</template>
+</body>
+</html>

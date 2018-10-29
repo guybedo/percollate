@@ -12,7 +12,7 @@ const Readability = require('./vendor/readability');
 const pkg = require('./package.json');
 
 const spinner = ora();
-
+const blueprints = require('./src/blueprints');
 const {
 	ampToHtml,
 	fixLazyLoadedImages,
@@ -65,10 +65,10 @@ function configure() {
 	Fetch a web page and clean the HTML
 	-----------------------------------
  */
-async function cleanup(url, options) {
+async function cleanup(item, blueprint) {
 	try {
-		spinner.start(`Fetching: ${url}`);
-		const content = (await got(url, {
+		spinner.start(`Fetching: ${item.url}`);
+		const content = (await got(item.url, {
 			headers: {
 				'user-agent': `percollate/${pkg.version}`
 			}
@@ -76,12 +76,15 @@ async function cleanup(url, options) {
 		spinner.succeed();
 
 		spinner.start('Enhancing web page');
-		const dom = createDom({ url, content });
+		const dom = createDom({ url: item.url, content });
 
 		const amp = dom.window.document.querySelector('link[rel=amphtml]');
-		if (amp && options.amp) {
+		if (amp && blueprint.options.amp) {
 			spinner.succeed('Found AMP version');
-			return cleanup(amp.href);
+			return cleanup(
+				Object.assign({}, item, { url: amp.href }),
+				blueprint
+			);
 		}
 
 		/* 
@@ -105,7 +108,7 @@ async function cleanup(url, options) {
 
 		spinner.succeed();
 
-		return { ...parsed, url };
+		return Object.assign({}, parsed, item);
 	} catch (error) {
 		spinner.fail(error.message);
 		throw error;
@@ -116,22 +119,19 @@ async function cleanup(url, options) {
 	Bundle the HTML files into a PDF
 	--------------------------------
  */
-async function bundle(items, options) {
+async function bundle(blueprint) {
 	spinner.start('Generating temporary HTML file');
 	const temp_file = tmp.tmpNameSync({ postfix: '.html' });
 
-	const stylesheet = resolve(options.style || './templates/default.css');
-	const style = fs.readFileSync(stylesheet, 'utf8') + (options.css || '');
+	const stylesheet = resolve(blueprint.document.css);
+	const style = fs.readFileSync(stylesheet, 'utf8');
 
 	const html = nunjucks.renderString(
-		fs.readFileSync(
-			resolve(options.template || './templates/default.html'),
-			'utf8'
-		),
+		fs.readFileSync(resolve(blueprint.document.template), 'utf8'),
 		{
-			items,
+			items: blueprint.document.items,
 			style,
-			stylesheet // deprecated
+			blueprint
 		}
 	);
 
@@ -185,7 +185,7 @@ async function bundle(items, options) {
 			Allow running with no sandbox
 			See: https://github.com/danburzo/percollate/issues/26
 		 */
-		args: options.sandbox
+		args: blueprint.options.sandbox
 			? undefined
 			: ['--no-sandbox', '--disable-setuid-sandbox'],
 		defaultViewport: {
@@ -208,9 +208,11 @@ async function bundle(items, options) {
 		in case we're bundling many web pages.
 	 */
 	const output_path =
-		options.output ||
-		(items.length === 1
-			? `${slugify(items[0].title || 'Untitled page')}.pdf`
+		blueprint.options.output ||
+		(blueprint.document.items.length === 1
+			? `${slugify(
+					blueprint.document.items[0].title || 'Untitled page'
+			  )}.pdf`
 			: `percollate-${Date.now()}.pdf`);
 
 	await page.pdf({
@@ -231,18 +233,25 @@ async function bundle(items, options) {
 	Generate PDF
  */
 async function pdf(urls, options) {
-	if (!urls.length) return;
-	let items = [];
-	for (let url of urls) {
-		let item = await cleanup(url, options);
-		if (options.individual) {
-			await bundle([item], options);
-		} else {
-			items.push(item);
-		}
+	const blueprint = blueprints.fromCommandLineOptions(urls, options);
+	if (!blueprint.document.items || !blueprint.document.items.length) {
+		return;
 	}
-	if (!options.individual) {
-		await bundle(items, options);
+	blueprint.document.items = await Promise.all(
+		blueprint.document.items.map(async function(item) {
+			return await cleanup(item, blueprint);
+		})
+	);
+	if (blueprint.options.individual) {
+		await Promise.all(
+			blueprint.document.items.map(async function(item) {
+				let itemBlueprint = Object.assign({}, blueprint);
+				itemBlueprint.document.items = [item];
+				await bundle(blueprint);
+			})
+		);
+	} else {
+		await bundle(blueprint);
 	}
 }
 

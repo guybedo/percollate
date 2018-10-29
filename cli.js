@@ -17,11 +17,14 @@ configure();
 
 function with_common_options(cmd) {
 	return cmd
+		.option('-b, --blueprint [blueprint]', 'Path to the blueprint')
 		.option('-o, --output [output]', 'Path for the generated bundle')
 		.option('--template [template]', 'Path to custom HTML template')
 		.option('--style [stylesheet]', 'Path to custom CSS')
 		.option('--css [style]', 'Additional CSS style')
 		.option('--individual', 'Export each web page as an individual file')
+		.option('--cover', 'Generate Cover')
+		.option('--toc', 'Generate TOC')
 		.option('--no-amp', "Don't prefer the AMP version of the web page");
 }
 
