@@ -22,7 +22,6 @@ function extractImage(doc) {
 	];
 	for (let idx = 0; idx < selectors.length; idx++) {
 		let imgs = Array.from(doc.querySelectorAll(selectors[idx]));
-		console.log(imgs);
 		if (imgs && imgs.length > 0) {
 			if (imgs[0].getAttribute('content')) {
 				return imgs[0].getAttribute('content');
