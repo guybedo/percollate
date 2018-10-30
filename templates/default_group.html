@@ -1,0 +1,27 @@
+<div class="cover">
+	<div class="cover-jumbo">
+		<h2 id="group_{{group.label}}">{{group.label}}</h2>
+	</div>
+</div>
+{% for item in group.items %}
+	<article id="item_{{item._id}}" class='article'>
+		<header class='article__header'>
+			<h1 class='article__title'>
+				{{ item.title }}
+			</h1>
+			{% if item.byline %}
+			<p class='article__byline'>
+				By <span>{{ item.byline }}</span>
+			</p>
+			{% endif %}
+			<p class='article__url'>
+				Source:
+				<a class='no-href' href="{{item.url}}">{{item.url}}</a>
+			</p>
+		</header>
+
+		<div class='article__content'>
+			{{ item.content }}
+		</div>
+	</article>
+{% endfor %}

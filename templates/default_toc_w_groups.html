@@ -1,0 +1,13 @@
+<nav class="toc">
+	<h1>Items</h1>
+	<ol class="toc-groups">
+		{% for group in blueprint.document.groups %}
+			<li class="toc__line"><a href="#group_{{group.label}}">{{ group.label }}</a></li>
+			<ol class="toc-items">
+				{% for item in group.items %}
+					<li class="toc__line"><a href="#item_{{item._id}}">{{ item.title }}</a></li>
+				{% endfor %}
+			</ol>
+		{% endfor %}
+	</ol>
+</nav>

@@ -79,11 +79,14 @@ async function cleanup(item, blueprint) {
 		spinner.start('Enhancing web page');
 		const dom = createDom({ url: item.url, content });
 
+		if (!item.amp) {
+			item._url = item.url;
+		}
 		const amp = dom.window.document.querySelector('link[rel=amphtml]');
 		if (amp && blueprint.options.amp) {
 			spinner.succeed('Found AMP version');
 			return cleanup(
-				Object.assign({}, item, { url: amp.href }),
+				Object.assign({}, item, { url: amp.href, amp: amp.href }),
 				blueprint
 			);
 		}
@@ -143,6 +146,24 @@ async function bundle(blueprint) {
 	if (blueprint.toc.generate) {
 		style += fs.readFileSync(resolve(blueprint.toc.css), 'utf8');
 	}
+
+	if (blueprint.document.groups && blueprint.document.groups.length > 0) {
+		blueprint.document.useGroups = true;
+		blueprint.toc.template = './templates/default_toc_w_groups.html';
+		let itemIndex = {};
+		blueprint.document.items.forEach(function(item) {
+			itemIndex[item._url] = item;
+		});
+		blueprint.document.groups = blueprint.document.groups.map(function(
+			group
+		) {
+			group.items = group.items.map(function(item) {
+				return itemIndex[item.url];
+			});
+			return group;
+		});
+	}
+	console.log(blueprint);
 
 	const html = nunjucks.renderString(
 		fs.readFileSync(resolve(blueprint.document.template), 'utf8'),

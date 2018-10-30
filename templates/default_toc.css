@@ -4,3 +4,18 @@ nav.toc {
 	height: 100%;
 	page-break-after: always;
 }
+
+.toc ol {
+	padding-inline-start: 1.5rem;
+}
+
+.toc a[href]:after {
+	content: none !important;
+}
+
+.toc ol.toc-groups {
+	list-style-type: none;
+}
+.toc ol.toc-items {
+	list-style-type: circle;
+}

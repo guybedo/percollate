@@ -1,0 +1,38 @@
+{
+	"cover": { "generate": true },
+	"toc": { "generate": true },
+	"document": {
+		"items": [
+			{
+				"url": "https://www.engadget.com/2018/10/28/fallout-76-not-coming-to-switch/"
+			},
+			{
+				"url": "https://techcrunch.com/2018/10/28/silicon-valleys-sovereign-wealth-problem/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Techcrunch+%28TechCrunch%29"
+			}
+		],
+		"groups": [
+			{
+				"label": "Group1",
+				"items": [
+					{
+						"url": "https://www.engadget.com/2018/10/28/fallout-76-not-coming-to-switch/"
+					}
+				]
+			},
+			{
+				"label": "Group2",
+				"items": [
+					{
+						"url": "https://techcrunch.com/2018/10/28/silicon-valleys-sovereign-wealth-problem/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Techcrunch+%28TechCrunch%29"
+					}
+				]
+			}
+		]
+	},
+	"options": {
+		"output": "percollate.pdf",
+		"individual": false,
+		"amp": true,
+		"sandbox": true
+	}
+}

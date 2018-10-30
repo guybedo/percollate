@@ -21,6 +21,11 @@
 	position: absolute;
 	bottom: 10px;
 }
+.cover-jumbo > h2 {
+	font-size: 1.25rem;
+	position: absolute;
+	bottom: 10px;
+}
 .cover-picture {
 	position: relative;
 	height: 40%;

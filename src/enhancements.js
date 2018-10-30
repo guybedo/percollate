@@ -15,8 +15,8 @@ function ampToHtml(doc) {
 
 function extractImage(doc) {
 	const selectors = [
-		"meta[name='og:image']",
 		"meta[name='twitter:image']",
+		"meta[name='og:image']",
 		'amp-img',
 		'img'
 	];

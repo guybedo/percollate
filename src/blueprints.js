@@ -12,7 +12,9 @@ function defaultBlueprint() {
 function fromCommandLineOptions(urls, options) {
 	let blueprint = null;
 	if (options.blueprint) {
-		blueprint = JSON.parse(fs.readFileSync(options.blueprint, 'utf8'));
+		blueprint = _buildBluePrint(
+			JSON.parse(fs.readFileSync(options.blueprint, 'utf8'))
+		);
 	} else {
 		blueprint = _parseCommandLineOptions(options, defaultBlueprint());
 	}
@@ -21,6 +23,23 @@ function fromCommandLineOptions(urls, options) {
 			return { url: url };
 		});
 	}
+	return blueprint;
+}
+
+function _buildBluePrint(userBlueprint) {
+	let blueprint = Object.assign({}, defaultBlueprint());
+	blueprint.cover = Object.assign({}, blueprint.cover, userBlueprint.cover);
+	blueprint.toc = Object.assign({}, blueprint.toc, userBlueprint.toc);
+	blueprint.document = Object.assign(
+		{},
+		blueprint.document,
+		userBlueprint.document
+	);
+	blueprint.options = Object.assign(
+		{},
+		blueprint.options,
+		userBlueprint.options
+	);
 	return blueprint;
 }
 
@@ -79,7 +98,8 @@ function _defaultDocument() {
 		template: './templates/default.html',
 		css: './templates/default.css',
 		assets: {},
-		items: []
+		items: [],
+		groups: []
 	};
 }
 

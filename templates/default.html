@@ -11,35 +11,22 @@
 <body>
 
 	{% if blueprint.cover.generate %}
-	{% include blueprint.cover.template %}
+		{% include blueprint.cover.template %}
 	{% endif %}
 
 	{% if blueprint.toc.generate %}
-	{% include blueprint.toc.template %}
+		{% include blueprint.toc.template %}
 	{% endif %}
 
-	{% for item in items %}
-	<article id="{{ item._id }}" class='article'>
-		<header class='article__header'>
-			<h1 class='article__title'>
-				{{ item.title }}
-			</h1>
-			{% if item.byline %}
-				<p class='article__byline'>
-					By <span>{{ item.byline }}</span>
-				</p>
-			{% endif %}
-			<p class='article__url'>
-				Source: 
-				<a class='no-href' href="{{item.url}}">{{item.url}}</a>
-			</p>
-		</header>
-
-		<div class='article__content'>
-			{{ item.content }}
-		</div>
-	</article>
-	{% endfor %}
+	{% if blueprint.document.useGroups %}
+		{% for group in blueprint.document.groups %}
+			{% include "./templates/default_group.html" %}
+		{% endfor %}
+	{% else %}
+		{% for item in items %}
+			{% include "./templates/default_item.html" %}
+		{% endfor %}
+	{% endif %}
 
 	<!-- Template to use for page footer -->
 	<template class='footer-template'>
