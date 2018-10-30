@@ -13,6 +13,27 @@ function ampToHtml(doc) {
 	});
 }
 
+function extractImage(doc) {
+	const selectors = [
+		"meta[name='og:image']",
+		"meta[name='twitter:image']",
+		'amp-img',
+		'img'
+	];
+	for (let idx = 0; idx < selectors.length; idx++) {
+		let imgs = Array.from(doc.querySelectorAll(selectors[idx]));
+		console.log(imgs);
+		if (imgs && imgs.length > 0) {
+			if (imgs[0].getAttribute('content')) {
+				return imgs[0].getAttribute('content');
+			} else {
+				return imgs[0].getAttribute('src');
+			}
+		}
+	}
+	return null;
+}
+
 function fixLazyLoadedImages(doc) {
 	Array.from(
 		doc.querySelectorAll(`
@@ -152,6 +173,7 @@ function singleImgToFigure(doc) {
 module.exports = {
 	ampToHtml,
 	fixLazyLoadedImages,
+	extractImage,
 	imagesAtFullSize,
 	noUselessHref,
 	wikipediaSpecific,

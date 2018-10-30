@@ -1,0 +1,16 @@
+<div class="cover">
+	<div class="cover-header">
+		{{blueprint.cover.header}}
+	</div>
+	<div class="cover-jumbo">
+		<h1>{{blueprint.cover.title}}</h1>
+	</div>
+	<div class="cover-picture">
+		{% if blueprint.cover.picture %}
+		<img src="{{blueprint.cover.picture}}" />
+		{% endif %}
+	</div>
+	<div class="cover-footer">
+		{{blueprint.cover.footer}}
+	</div>
+</div>

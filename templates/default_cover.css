@@ -1,0 +1,38 @@
+.cover {
+	display: block;
+	position: relative;
+	height: 100%;
+	page-break-after: always;
+}
+.cover-header {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+.cover-jumbo {
+	position: relative;
+	height: 40%;
+	width: 90%;
+	margin: auto;
+	border-bottom: 1px solid #eaeaea;
+}
+.cover-jumbo > h1 {
+	font-size: 1.5rem;
+	position: absolute;
+	bottom: 10px;
+}
+.cover-picture {
+	position: relative;
+	height: 40%;
+	width: 90%;
+	margin: auto;
+}
+.cover-picture > img {
+	max-width: 100%;
+	max-height: 100%;
+}
+.cover-footer {
+	position: absolute;
+	bottom: 25px;
+	left: 5px;
+}

@@ -10,6 +10,10 @@
 </head>
 <body>
 
+	{% if blueprint.cover.generate %}
+	{% include blueprint.cover.template %}
+	{% endif %}
+
 	{% if blueprint.toc.generate %}
 	{% include blueprint.toc.template %}
 	{% endif %}

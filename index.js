@@ -16,6 +16,7 @@ const blueprints = require('./src/blueprints');
 const {
 	ampToHtml,
 	fixLazyLoadedImages,
+	extractImage,
 	imagesAtFullSize,
 	wikipediaSpecific,
 	noUselessHref,
@@ -92,6 +93,7 @@ async function cleanup(item, blueprint) {
 			----------------
 		*/
 		enhancePage(dom);
+		const img = extractImage(dom.window.document);
 
 		// Run through readability and return
 		const parsed = new Readability(dom.window.document, {
@@ -112,7 +114,7 @@ async function cleanup(item, blueprint) {
 			.toString(36)
 			.replace(/[^a-z]+/g, '')
 			.substr(2, 10);
-		return Object.assign({}, parsed, item, { _id: _id });
+		return Object.assign({}, parsed, item, { _id: _id, img: img });
 	} catch (error) {
 		spinner.fail(error.message);
 		throw error;
@@ -131,6 +133,12 @@ async function bundle(blueprint) {
 	let style = fs.readFileSync(stylesheet, 'utf8');
 	if (blueprint.cover.generate) {
 		style += fs.readFileSync(resolve(blueprint.cover.css), 'utf8');
+		if (!blueprint.cover.title) {
+			blueprint.cover.title = blueprint.document.items[0].title;
+		}
+		if (!blueprint.cover.picture) {
+			blueprint.cover.picture = blueprint.document.items[0].img;
+		}
 	}
 	if (blueprint.toc.generate) {
 		style += fs.readFileSync(resolve(blueprint.toc.css), 'utf8');

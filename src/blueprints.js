@@ -57,6 +57,10 @@ function _defaultCover() {
 		generate: false,
 		template: './templates/default_cover.html',
 		css: './templates/default_cover.css',
+		title: null,
+		picture: null,
+		header: 'Percollate',
+		footer: new Date(),
 		assets: {}
 	};
 }
