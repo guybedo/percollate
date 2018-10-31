@@ -48,6 +48,7 @@ function _defaultOptions() {
 	return {
 		output: 'percollate.pdf',
 		individual: false,
+		silent: false,
 		amp: true
 	};
 }
