@@ -11,9 +11,7 @@ const Readability = require('./vendor/readability');
 const pkg = require('./package.json');
 
 const blueprints = require('./src/blueprints');
-
 const log = require('./src/log');
-let spinner = log.spinner(false);
 
 const {
 	ampToHtml,
@@ -45,6 +43,8 @@ const enhancePage = function(dom) {
 		enhancement(dom.window.document);
 	});
 };
+
+let spinner = log.spinner(false);
 
 function createDom({ url, content }) {
 	const dom = new JSDOM(content, { url });
