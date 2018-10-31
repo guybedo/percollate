@@ -11,20 +11,20 @@
 <body>
 
 	{% if blueprint.cover.generate %}
-		{% include blueprint.cover.template %}
+		{% include blueprint.templates.cover %}
 	{% endif %}
 
 	{% if blueprint.toc.generate %}
-		{% include blueprint.toc.template %}
+		{% include blueprint.templates.toc %}
 	{% endif %}
 
 	{% if blueprint.document.useGroups %}
 		{% for group in blueprint.document.groups %}
-			{% include "./templates/default_group.html" %}
+			{% include blueprint.templates.group %}
 		{% endfor %}
 	{% else %}
 		{% for item in items %}
-			{% include "./templates/default_item.html" %}
+			{% include blueprint.templates.item %}
 		{% endfor %}
 	{% endif %}
 

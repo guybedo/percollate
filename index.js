@@ -150,8 +150,6 @@ async function bundle(blueprint) {
 	}
 
 	if (blueprint.document.groups && blueprint.document.groups.length > 0) {
-		blueprint.document.useGroups = true;
-		blueprint.toc.template = './templates/default_toc_w_groups.html';
 		let itemIndex = {};
 		blueprint.document.items.forEach(function(item) {
 			itemIndex[item._url] = item;

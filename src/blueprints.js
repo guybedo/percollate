@@ -1,16 +1,17 @@
 const fs = require('fs');
+const path = require('path');
 
-const resolveTemplate = path =>
-	require.resolve(path, {
-		paths: [process.cwd()]
-	});
+function resolveTemplate(filename) {
+	return path.resolve(__dirname, '..', 'templates', filename);
+}
 
 function defaultBlueprint() {
 	return {
 		cover: _defaultCover(),
 		toc: _defaultToc(),
 		document: _defaultDocument(),
-		options: _defaultOptions()
+		options: _defaultOptions(),
+		templates: _defaultTemplates()
 	};
 }
 
@@ -22,6 +23,14 @@ function fromCommandLineOptions(urls, options) {
 		);
 	} else {
 		blueprint = _parseCommandLineOptions(options, defaultBlueprint());
+	}
+	if (blueprint.document.groups && blueprint.document.groups.length > 0) {
+		blueprint.document.useGroups = true;
+		if (blueprint.templates.toc === resolveTemplate('default_toc.html')) {
+			blueprint.templates.toc = resolveTemplate(
+				'default_toc_w_groups.html'
+			);
+		}
 	}
 	if (urls && urls.length > 0) {
 		blueprint.document.items = urls.map(function(url) {
@@ -79,8 +88,8 @@ function _defaultOptions() {
 function _defaultCover() {
 	return {
 		generate: false,
-		template: resolveTemplate('templates/default_cover.html'),
-		css: resolveTemplate('templates/default_cover.css'),
+		template: resolveTemplate('default_cover.html'),
+		css: resolveTemplate('default_cover.css'),
 		title: null,
 		picture: null,
 		header: 'Percollate',
@@ -92,19 +101,29 @@ function _defaultCover() {
 function _defaultToc() {
 	return {
 		generate: false,
-		template: resolveTemplate('templates/default_toc.html'),
-		css: resolveTemplate('templates/default_toc.css'),
+		template: resolveTemplate('default_toc.html'),
+		css: resolveTemplate('default_toc.css'),
 		assets: {}
 	};
 }
 
 function _defaultDocument() {
 	return {
-		template: resolveTemplate('templates/default.html'),
-		css: resolveTemplate('templates/default.css'),
+		template: resolveTemplate('default.html'),
+		css: resolveTemplate('default.css'),
 		assets: {},
 		items: [],
 		groups: []
+	};
+}
+
+function _defaultTemplates() {
+	return {
+		toc: resolveTemplate('default_toc.html'),
+		cover: resolveTemplate('default_cover.html'),
+		document: resolveTemplate('default.html'),
+		item: resolveTemplate('default_item.html'),
+		group: resolveTemplate('default_group.html')
 	};
 }
 
