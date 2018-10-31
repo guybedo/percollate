@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 const pup = require('puppeteer');
 const got = require('got');
-const ora = require('ora');
 const { JSDOM } = require('jsdom');
 const nunjucks = require('nunjucks');
 const tmp = require('tmp');
@@ -11,8 +10,9 @@ const slugify = require('slugify');
 const Readability = require('./vendor/readability');
 const pkg = require('./package.json');
 
-const spinner = ora();
 const blueprints = require('./src/blueprints');
+const log = require('./src/log');
+
 const {
 	ampToHtml,
 	fixLazyLoadedImages,
@@ -44,6 +44,8 @@ const enhancePage = function(dom) {
 		enhancement(dom.window.document);
 	});
 };
+
+let spinner = log.spinner(false);
 
 function createDom({ url, content }) {
 	const dom = new JSDOM(content, { url });
@@ -280,6 +282,7 @@ async function pdf(urls, options) {
 	if (!blueprint.document.items || !blueprint.document.items.length) {
 		return;
 	}
+	spinner = log.spinner(blueprint.options.silent);
 	blueprint.document.items = await Promise.all(
 		blueprint.document.items.map(async function(item) {
 			return await cleanup(item, blueprint);
