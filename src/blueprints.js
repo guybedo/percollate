@@ -1,5 +1,10 @@
 const fs = require('fs');
 
+const resolveTemplate = path =>
+	require.resolve(path, {
+		paths: [process.cwd()]
+	});
+
 function defaultBlueprint() {
 	return {
 		cover: _defaultCover(),
@@ -74,8 +79,8 @@ function _defaultOptions() {
 function _defaultCover() {
 	return {
 		generate: false,
-		template: './templates/default_cover.html',
-		css: './templates/default_cover.css',
+		template: resolveTemplate('templates/default_cover.html'),
+		css: resolveTemplate('templates/default_cover.css'),
 		title: null,
 		picture: null,
 		header: 'Percollate',
@@ -87,16 +92,16 @@ function _defaultCover() {
 function _defaultToc() {
 	return {
 		generate: false,
-		template: './templates/default_toc.html',
-		css: './templates/default_toc.css',
+		template: resolveTemplate('templates/default_toc.html'),
+		css: resolveTemplate('templates/default_toc.css'),
 		assets: {}
 	};
 }
 
 function _defaultDocument() {
 	return {
-		template: './templates/default.html',
-		css: './templates/default.css',
+		template: resolveTemplate('templates/default.html'),
+		css: resolveTemplate('templates/default.css'),
 		assets: {},
 		items: [],
 		groups: []
