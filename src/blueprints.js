@@ -11,7 +11,9 @@ function defaultBlueprint() {
 		toc: _defaultToc(),
 		document: _defaultDocument(),
 		options: _defaultOptions(),
-		templates: _defaultTemplates()
+		templates: _defaultTemplates(),
+		http: _defaultHttp(),
+		pupeteer: _defaultPupeteer()
 	};
 }
 
@@ -54,6 +56,12 @@ function _buildBluePrint(userBlueprint) {
 		blueprint.options,
 		userBlueprint.options
 	);
+	blueprint.http = Object.assign({}, blueprint.http, userBlueprint.http);
+	blueprint.pupeteer = Object.assign(
+		{},
+		blueprint.pupeteer,
+		userBlueprint.pupeteer
+	);
 	return blueprint;
 }
 
@@ -75,6 +83,18 @@ function _parseCommandLineOptions(options, blueprint) {
 	blueprint.options['individual'] = options.individual;
 	blueprint.options['no-amp'] = options.amp;
 	return blueprint;
+}
+
+function _defaultHttp() {
+	return {
+		concurrency: 5
+	};
+}
+
+function _defaultPupeteer() {
+	return {
+		timeout: 60000
+	};
 }
 
 function _defaultOptions() {

@@ -1,52 +1,1336 @@
 {
-	"cover": {
-		"generate": true,
-		"template": "./templates/default_cover.html",
-		"css": "./templates/default_cover.css",
-		"title": null,
-		"picture": null,
-		"header": "Percollate",
-		"footer": "Generated on 2018-10-30"
-	},
-	"toc": {
-		"generate": true,
-		"template": "./templates/default_toc.html",
-		"css": "./templates/default_toc.css"
+	"toc": { "generate": true },
+	"cover": { "generate": true },
+	"http": { "concurrency": 10 },
+	"pupeteer": { "timeout": 600000 },
+	"options": {
+		"output": "output.pdf",
+		"amp": true,
+		"individual": false,
+		"sandbox": true,
+		"silent": false
 	},
 	"document": {
-		"template": "./templates/default.html",
-		"css": "./templates/default.css",
 		"items": [
 			{
-				"url": "https://www.engadget.com/2018/10/28/fallout-76-not-coming-to-switch/"
+				"url": "http://feedproxy.google.com/~r/time/topstories/~3/mtqaHPYzJaw/"
 			},
 			{
-				"url": "https://techcrunch.com/2018/10/28/silicon-valleys-sovereign-wealth-problem/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Techcrunch+%28TechCrunch%29"
+				"url": "http://feeds.celebritybabies.com/~r/celebrity-babies/~3/-m8My2kAF08/"
+			},
+			{ "url": "http://www.bbc.co.uk/sport/gymnastics/46062997" },
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNECDL7fLZ0X-R-c-CTRwNyaB71xvQ&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780086372556&ei=nSDbW8iCIdWP3QH8mILIBA&url=https://www.usatoday.com/story/sports/columnist/nancy-armour/2018/11/01/simone-biles-makes-history-all-around-gold-world-championships/1844650002/"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNGtu7Kj2yvZl73B9BB86UsJUsBddw&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780086372556&ei=uiHbW6jOJ9aZ3QGp75jwDw&url=https://www.bbc.co.uk/sport/gymnastics/46062997"
+			},
+			{
+				"url": "http://www.espn.com/nfl/story/_/id/25126336/tom-brady-new-england-patriots-calls-aaron-rodgers-green-bay-packers-inspiring"
+			},
+			{
+				"url": "http://www.espn.com/blog/green-bay-packers/post/_/id/46118/aaron-rodgers-and-tom-brady-contemporaries-but-not-rivals"
+			},
+			{
+				"url": "http://feeds.reuters.com/~r/reuters/sportsNews/~3/Xm1y4PalPmg/rodgers-brady-matchup-highlights-packers-patriots-idUSKCN1N65FW"
+			},
+			{
+				"url": "https://www.complex.com/sports/2018/10/tom-brady-says-aaron-rodgers-inspiring"
+			},
+			{
+				"url": "https://dailycaller.com/2018/10/31/tom-brady-aaron-rodgers-inspiring/"
+			},
+			{ "url": "http://www.bbc.co.uk/sport/rugby-union/46037489" },
+			{ "url": "http://www.bbc.co.uk/sport/rugby-union/46058544" },
+			{ "url": "http://www.bbc.co.uk/sport/rugby-union/46059572" },
+			{
+				"url": "https://www.telegraph.co.uk/rugby-union/2018/10/29/courtney-lawes-almost-certain-miss-england-match-against-south/"
+			},
+			{
+				"url": "https://www.telegraph.co.uk/rugby-union/2018/11/01/england-vs-south-africa-autumn-internationals-2018-time-kick/"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNHLYD5TA2Bgi0u_CFZkpGmlifyaCg&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084910816&ei=UTPaW_iBHIyS3QGHhLHgDg&url=http://www.espn.com/college-football/story/_/id/25137549/maryland-terrapins-coach-dj-durkin-fired-wake-probe"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNHFx0UyZleCjda0ofq8nL5s659ooQ&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084910816&ei=QzXaW7j_B9aZ3QGp75jwDw&url=http://www.espn.com/college-football/story/_/id/25137549/maryland-terrapins-coach-dj-durkin-fired-one-day-reinstatement"
+			},
+			{
+				"url": "http://www.espn.com/college-football/story/_/id/25128085/maryland-board-recommend-keeping-dj-durkin-damon-evans"
+			},
+			{
+				"url": "http://www.espn.com/college-football/story/_/id/25137549/maryland-terrapins-coach-dj-durkin-fired-wake-probe"
+			},
+			{
+				"url": "http://www.espn.com/college-football/story/_/id/25139194/marty-mcnair-father-jordan-calls-decision-fire-maryland-terrapins-coach-dj-durkin-step-right-direction"
+			},
+			{
+				"url": "https://bleacherreport.com/articles/2803734-mauricio-pochettino-exit-rumours-reportedly-concerning-tottenham-players"
+			},
+			{
+				"url": "https://www.telegraph.co.uk/football/2018/10/30/tottenham-players-fear-mauricio-pochettino-could-leave-summer/"
+			},
+			{
+				"url": "http://www.independent.co.uk/sport/football/premier-league/mauricio-pochettino-gary-neville-tottenham-hotspur-manchester-city-premier-league-efl-a8607761.html"
+			},
+			{
+				"url": "https://www.theguardian.com/football/blog/2018/oct/30/mauricio-pochettino-tottenham-stadium-white-hart-lane"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=uk&usg=AFQjCNEQnraZKwjp7bKh_ajk16YUwYG2cA&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780085476453&ei=qTXaW9iDEcG63QGzn4rICQ&url=https://www.itv.com/news/2018-10-31/player-welfare-comes-first-for-tottenham-boss-mauricio-pochettino/"
+			},
+			{
+				"url": "https://www.washingtonpost.com/politics/a-mass-shooting-in-pittsburgh-and-a-trump-visit-expose-a-divided-america/2018/10/30/93cbb0d4-dbc8-11e8-85df-7a6b4d25cfbb_story.html"
+			},
+			{
+				"url": "https://www.washingtonpost.com/politics/the-fix/heres-the-small-protest-trump-says-he-didnt-see-in-pittsburgh/2018/10/31/c00d1483-7ec5-4764-9921-877778711b08_story.html"
+			},
+			{
+				"url": "https://www.washingtonpost.com/politics/tree-of-life-rabbi-says-he-saw-a-warm-and-personal-side-to-trump-that-surprised-him/2018/11/01/df6655ae-ddca-11e8-85df-7a6b4d25cfbb_story.html"
+			},
+			{
+				"url": "https://www.theguardian.com/global/video/2018/oct/31/make-america-kind-again-pittsburgh-mourners-fill-streets-as-trump-visits-video"
+			},
+			{
+				"url": "https://www.theguardian.com/us-news/2018/oct/31/pittsburgh-funerals-shooting-victims-trump-protests"
+			},
+			{
+				"url": "https://slate.com/news-and-politics/2018/10/trump-birthright-radical-ideology-white-supremacy.html"
+			},
+			{
+				"url": "http://www.tmz.com/2018/10/30/judge-mathis-president-trump-birthright-citizenship-issue/"
+			},
+			{
+				"url": "http://feedproxy.google.com/~r/Talking-Points-Memo/~3/aiLcYuE9TlU/nope-the-president-cant-end-birthright-citizenship"
+			},
+			{
+				"url": "https://www.newyorker.com/news/our-columnists/trump-birthright-citizenship-and-the-mainstreaming-of-unimaginable-ideas"
+			},
+			{
+				"url": "http://feeds.boingboing.net/~r/boingboing/iBag/~3/b8nPUg-74X0/judge-schools-fox-and-friends.html"
+			},
+			{
+				"url": "http://feeds.reuters.com/~r/Reuters/worldNews/~3/qA8vbec49MM/pakistani-court-overturns-death-sentence-for-christian-woman-in-blasphemy-case-idUSKCN1N50EK"
+			},
+			{
+				"url": "http://feeds.reuters.com/~r/Reuters/worldNews/~3/D_C_yDPlBes/pakistan-frees-christian-woman-facing-death-in-blasphemy-case-idUSKCN1N42YK"
+			},
+			{
+				"url": "http://feeds.reuters.com/~r/Reuters/worldNews/~3/LdGMpKs-F2E/pakistani-islamist-party-calls-for-death-of-judges-who-freed-christian-woman-sentenced-for-blasphemy-idUSKCN1N50UI"
+			},
+			{
+				"url": "http://feeds.reuters.com/~r/Reuters/worldNews/~3/nKFlVjOXy9s/pakistan-islamists-protest-as-christian-woman-freed-in-blasphemy-case-idUSKCN1N42YK"
+			},
+			{
+				"url": "http://feeds.reuters.com/~r/Reuters/worldNews/~3/aiC58Y9q3Ng/christian-womans-release-in-pakistan-sparks-protests-threats-idUSKCN1N42YK"
+			},
+			{
+				"url": "http://www.tmz.com/2018/10/30/whitey-bulger-dead-prison-crime-boss-mob-west-virginia/"
+			},
+			{
+				"url": "http://www.tmz.com/2018/10/31/whitey-bulger-attack-tongue-cut-eye-gouging-mob-hit/"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNGQ5vMTKRJozjdcGYnkevzCaDj8yA&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084743924&ei=RPPZW-iBAtaZ3QGp75jwDw&url=https://www.newschannel10.com/2018/10/31/official-mafia-hit-man-is-suspect-death-whitey-bulger/"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNFeidLm_1tWw29-82krVhoNfHRx0Q&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780083750371&ei=f5DYW_CJNo7o3AHKo4HgBA&url=https://www.bostonglobe.com/metro/2018/10/30/james-whitey-bulger-moved-hazelton-federal-prison-west-virginia/2lFAoqNktMi5fjaJ8PWRAI/story.html"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNFOQ9dR0LHt1cqiSz4fJ7KGyW3ZfA&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084743924&ei=Id_ZW8CyBNaZ3QGp75jwDw&url=https://nypost.com/2018/10/31/juror-who-helped-send-whitey-bulger-to-prison-deeply-saddened-by-killing/"
+			},
+			{
+				"url": "https://seekingalpha.com/article/4216460-british-pound-stalls-momentum-brexit-suffers?source=feed_all_articles"
+			},
+			{
+				"url": "http://feedproxy.google.com/~r/clusterstock/~3/ZxTDejvgdCI/city-of-london-eu-uk-brexit-negotiators-agree-financial-services-deal-2018-11"
+			},
+			{
+				"url": "https://www.theguardian.com/politics/2018/oct/30/irish-government-brit-bashing-hard-brexit-rhetoric-ulster-volunteer-force-uvf"
+			},
+			{ "url": "https://www.bbc.co.uk/news/business-46053283" },
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNE_UDMgC9h569qOWAf175mDKa0KvQ&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084018232&ei=UvraW9j0FdaZ3QGp75jwDw&url=https://uk.reuters.com/article/uk-britain-eu-financial-services/uk-eu-close-to-brexit-deal-on-financial-services-uk-official-idUKKCN1N639U"
+			},
+			{
+				"url": "https://www.thehindu.com/sci-tech/energy-and-environment/earths-wild-animal-population-plummets-60-in-44-years-wwf/article25370522.ece"
+			},
+			{
+				"url": "https://www.vox.com/science-and-health/2018/10/30/18042150/wwf-living-planet-report-vertebrate-loss"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNEigJZVztVa-UCFixacQB1r1dNflA&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780083207575&ei=ZjXYW6iuCNm-3AHT-q2ICw&url=https://www.bbc.com/news/science-environment-46028862"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNGi969BtAVlbhp5bvMlbx7z24Cg_g&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780085233175&ei=UcfaW_iEG5mCpwfE7YX4Dg&url=http://time.com/5441282/five-countries-worlds-last-wilderness/"
+			},
+			{
+				"url": "https://newrepublic.com/article/151981/extinction-wilderness-untouched-lands-oceans-disappearing"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNFEVQ-MhjvtGgCdLeKnKIUCNTCo_w&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780085990469&ei=CwLbW7C0E5mCpwfE7YX4Dg&url=https://www.livescience.com/63982-daylight-saving-time-ends.html"
+			},
+			{
+				"url": "http://feedproxy.google.com/~r/Livesciencecom/~3/YpRkXBRQIdA/63982-daylight-saving-time-ends.html"
+			},
+			{
+				"url": "http://www.independent.co.uk/life-style/daylight-saving-time-when-clocks-turn-back-us-2018-fall-lose-sleep-why-a8607401.html"
+			},
+			{
+				"url": "https://www.news5cleveland.com/news/local-news/oh-cuyahoga/daylight-saving-time-2018-when-do-we-set-our-clocks-back-"
+			},
+			{
+				"url": "https://www.dispatch.com/news/20181101/daylight-saving-time-4-questions-answered?rssfeed=true"
+			},
+			{ "url": "https://phys.org/news/2018-10-seabed-future.html" },
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=in&usg=AFQjCNHb6r7qX-6DIeXw_D8p0dcMOTmzGg&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084031140&ei=CqDYW7jdPISP3QHftI_oAQ&url=https://www.business-standard.com/article/news-ani/human-made-co2-dissolving-seafloor-118103001520_1.html"
+			},
+			{
+				"url": "https://motherboard.vice.com/en_us/article/d3qaek/the-seafloor-is-dissolving-because-climate-change"
+			},
+			{
+				"url": "https://economictimes.indiatimes.com/news/economy/foreign-trade/huge-potential-in-ict-aerospace-healthcare-agriculture-infrastructure-to-boost-economic-ties-with-india-italy/articleshow/66413825.cms"
+			},
+			{
+				"url": "https://economictimes.indiatimes.com/news/economy/foreign-trade/india-italy-to-fast-track-trade-two-way-investments/articleshow/66434263.cms"
+			},
+			{
+				"url": "https://economictimes.indiatimes.com/news/economy/policy/india-china-to-undertake-joint-research-on-wto-reforms/articleshow/66464341.cms"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=in&usg=AFQjCNG1L-WwExZYKyDZadvC8w0plEkrfg&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780082238306&ei=mKDYW6jgIYyS3QGHhLHgDg&url=http://www.easternmirrornagaland.com/india-italy-agree-to-share-knowledge-expedite-investments/"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=in&usg=AFQjCNEo8-ci1uGCR3JgFXPPd2YSr2xONQ&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780082238306&ei=56TYW4DPOYSP3QHftI_oAQ&url=https://timesofindia.indiatimes.com/business/india-business/india-italy-to-set-up-institutional-framework-to-enhance-economic-coop/articleshow/66435462.cms"
+			},
+			{
+				"url": "http://feedproxy.google.com/~r/TheArchaeologyNewsNetwork/~3/OAR4QQpJH7c/deforestation-triggered-mass-extinction.html"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNEF43p_sUZSti_hElkVYRb5TTGb7Q&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780082940911&ei=qHfXW4DKEcG63QGzn4rICQ&url=https://phys.org/news/2018-10-animal-species-extinct-haiti-deforestation.html"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNH82R6nC8TXj-jIPYmkkgbdSfpgGQ&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084229171&ei=y9PYW4DwLtaZ3QGp75jwDw&url=https://www.sciencedaily.com/releases/2018/10/181029164650.htm"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNEIwgRoy80jKkml2G7FLI2-MRhc8g&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084229171&ei=BtrYW_iiEc2f3QGwlargAw&url=https://www.mnn.com/earth-matters/wilderness-resources/stories/haiti-now-almost-completely-deforested"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNEL56GaaDZ9LS9DwgD5B4x11FllPQ&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084385658&ei=pv3YW8iRHI7o3AHKo4HgBA&url=https://yubanet.com/enviro/animal-species-becoming-extinct-in-haiti-as-deforestation-nearly-complete/"
+			},
+			{
+				"url": "https://seekingalpha.com/article/4215603-mondelez-international-inc-2018-q3-results-earnings-call-slides?source=feed_all_articles"
+			},
+			{
+				"url": "https://seekingalpha.com/article/4215650-veracyte-inc-2018-q3-results-earnings-call-slides?source=feed_all_articles"
+			},
+			{
+				"url": "https://seekingalpha.com/article/4215741-aercap-holdings-n-v-2018-q3-results-earnings-call-slides?source=feed_all_articles"
+			},
+			{
+				"url": "https://seekingalpha.com/article/4216098-zendesk-inc-2018-q3-results-earnings-call-slides?source=feed_all_articles"
+			},
+			{
+				"url": "https://seekingalpha.com/article/4216101-chesapeake-energy-corporation-2018-q3-results-earnings-call-slides?source=feed_all_articles"
+			},
+			{
+				"url": "http://feeds.reuters.com/~r/reuters/businessNews/~3/lIdMMs64EPE/facebook-misses-estimates-for-monthly-users-revenue-idUSKCN1N42NR"
+			},
+			{
+				"url": "http://feeds.reuters.com/~r/reuters/businessNews/~3/s9zhXAXOkGU/facebooks-rise-in-profit-outweighs-slow-user-sales-growth-idUSKCN1N42NR"
+			},
+			{
+				"url": "http://feeds.reuters.com/~r/reuters/businessNews/~3/IUmC2CoBDIU/spotify-faults-itself-for-margin-gains-stock-hits-new-lows-idUSKCN1N64JE"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNG6Jid5rnpN-GU9lCSWtUSVdJxNkQ&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084193830&ei=hqPZW7iQLM2f3QGwlargAw&url=https://www.businessinsider.com/facebook-q3-2018-earnings-2018-10"
+			},
+			{ "url": "http://www.billboard.com/node/8482731" },
+			{
+				"url": "http://www.marketwatch.com/news/story.asp?guid=%7B87A52D04-DDD9-11E8-AF74-E52BB354A906%7D&siteid=rss&rss=1"
+			},
+			{
+				"url": "http://feeds.marketwatch.com/~r/marketwatch/marketpulse/~3/pp0-7rj7aHA/story.aspx"
+			},
+			{
+				"url": "http://feeds.marketwatch.com/~r/marketwatch/marketpulse/~3/0geAjtRgnKw/story.aspx"
+			},
+			{
+				"url": "http://feeds.marketwatch.com/~r/marketwatch/marketpulse/~3/DBEB2IFt1Qo/story.aspx"
+			},
+			{
+				"url": "http://feeds.marketwatch.com/~r/marketwatch/marketpulse/~3/g7yzAhzKzcg/story.aspx"
+			},
+			{
+				"url": "http://timesofindia.indiatimes.com/india/sc-declines-urgent-hearing-on-kartis-plea-seeking-permission-to-go-abroad/articleshow/66456549.cms"
+			},
+			{
+				"url": "https://www.moneycontrol.com/news/current-affairs/court-ordervijay-mallya-plea-against-ed-proceedings-likelyoctober-30_11600081.html"
+			},
+			{
+				"url": "https://www.moneycontrol.com/news/current-affairs/court-rejects-vijay-mallya39s-plea-against-ed-proceedings-for-feo-tag_11618201.html"
+			},
+			{
+				"url": "https://www.moneycontrol.com/news/current-affairs/ed-seeks-custodial-interrogationchidambaramaircel-maxis-money-laundering-case_11624041.html"
+			},
+			{
+				"url": "https://economictimes.indiatimes.com/politics/ed-seeks-custodial-interrogation-of-chidambaram-in-aircel-maxis-case/articleshow/66445499.cms"
+			},
+			{
+				"url": "http://feedproxy.google.com/~r/time/topstories/~3/tFJmRYzGPVs/"
+			},
+			{
+				"url": "http://feedproxy.google.com/~r/time/topstories/~3/gPGbSVaP3ew/"
+			},
+			{ "url": "https://feeds.feedblitz.com/~/577762692/0/alternet" },
+			{
+				"url": "https://www.scientificamerican.com/article/the-vulnerabilities-of-our-voting-machines/"
+			},
+			{
+				"url": "https://www.cbsnews.com/news/what-are-bot-farms-and-why-do-hackers-target-elections-cybersecurity/"
+			},
+			{
+				"url": "https://www.spin.com/2018/10/missy-elliot-the-rain-halloween-costume/"
+			},
+			{
+				"url": "https://www.celebitchy.com/598280/beyonce_went_all_out_as_phoni_braxton_for_halloween_links/"
+			},
+			{
+				"url": "http://www.popoholic.com/2018/11/01/jessica-lowndes-as-an-ultra-sexybloody-christmas-elf-for-halloween/"
+			},
+			{
+				"url": "http://feedproxy.google.com/~r/bossiprss/~3/7EB7L-XN7vE/"
+			},
+			{
+				"url": "http://feeds.celebritybabies.com/~r/celebrity-babies/~3/LkyDEhU4fJk/"
+			},
+			{
+				"url": "http://www.tmz.com/2018/10/30/kanye-west-donald-trump-used-blexit-candace-owens/"
+			},
+			{
+				"url": "https://www.spin.com/2018/10/kanye-out-of-politics-blexit-candace-owens/"
+			},
+			{
+				"url": "https://www.celebitchy.com/598171/the_boy_who_cried_maga_kanye_west_now_claims_he_was_being_used/"
+			},
+			{
+				"url": "https://pagesix.com/2018/10/30/kanye-says-hes-been-used-will-focus-on-art-from-now-on/"
+			},
+			{
+				"url": "http://feeds.celebritybabies.com/~r/celebrity-babies/~3/1Js5EJa_oX4/"
+			},
+			{
+				"url": "https://www.seattletimes.com/business/liz-weston-how-to-score-luxury-travel-for-less/?utm_source=RSS&utm_medium=Referral&utm_campaign=RSS_all"
+			},
+			{
+				"url": "https://www.dallasnews.com/business/personal-finance/2018/10/30/spend-little-add-lot-luxury-trip-tips"
+			},
+			{
+				"url": "http://feedproxy.google.com/~r/NerdwalletCreditCardWatch/~3/fGDbnsQT44Y/how-to-score-luxury-travel-for-less"
+			},
+			{
+				"url": "http://feedproxy.google.com/~r/NerdwalletCreditCardWatch/~3/5-PyWScJ17I/"
+			},
+			{
+				"url": "https://www.kicksonfire.com/nike-air-max-97-velvet-brown/"
+			},
+			{
+				"url": "https://www.kicksonfire.com/nike-air-vapormax-97-gs-atmosphere-grey/"
+			},
+			{
+				"url": "https://www.kicksonfire.com/nike-wmns-air-vapormax-2-racer-pink-racer-blue-release-date/"
+			},
+			{
+				"url": "https://www.kicksonfire.com/nike-air-max-1-og-anniversary-university-red-restock-november-2018/"
+			},
+			{
+				"url": "http://feeds.ign.com/~r/ign/all/~3/nq-W3DKwfWA/the-nutcracker-and-the-four-realms-review"
+			},
+			{
+				"url": "https://film.avclub.com/the-nutcracker-and-the-four-realms-is-another-flavorles-1830140852"
+			},
+			{
+				"url": "https://consequenceofsound.net/2018/11/film-review-the-nutcracker-and-the-four-realms/"
+			},
+			{
+				"url": "https://www.slashfilm.com/nutcracker-and-the-four-realms-review/"
+			},
+			{
+				"url": "http://feeds.reuters.com/~r/reuters/companyNews/~3/9JYh_Gz4rO8/disney-tells-a-different-nutcracker-story-on-the-big-screen-idUSL2N1X6246"
+			},
+			{
+				"url": "http://rss.slashdot.org/~r/Slashdot/slashdot/~3/FJXRP8yezao/about-that-monstrous-black-hole-were-all-orbiting"
+			},
+			{
+				"url": "https://www.quantamagazine.org/astronomers-creep-up-to-the-edge-of-the-milky-ways-black-hole-20181030/"
+			},
+			{
+				"url": "https://www.sciencedaily.com/releases/2018/10/181031080621.htm"
+			},
+			{
+				"url": "https://motherboard.vice.com/en_us/article/zm9jm8/astronomers-find-strong-evidence-there-is-a-supermassive-black-hole-at-the-center-of-our-galaxy"
+			},
+			{
+				"url": "http://feedproxy.google.com/~r/TheArchaeologyNewsNetwork/~3/yyxLH1Wt-ok/astronomers-confirm-collision-between.html"
+			},
+			{
+				"url": "https://www.engadget.com/2018/10/30/kepler-space-telescope-retires/"
+			},
+			{
+				"url": "https://www.theverge.com/2018/10/30/18044152/nasa-kepler-space-telescope-out-of-fuel-dead"
+			},
+			{ "url": "http://feeds.mashable.com/~r/Mashable/~3/OQQ2tDTAYSM/" },
+			{
+				"url": "https://hackaday.com/2018/10/30/kepler-closes-eyes-after-a-decade-of-discovery/"
+			},
+			{
+				"url": "http://feedproxy.google.com/~r/time/topstories/~3/VoMkMGTo2RQ/"
+			},
+			{
+				"url": "http://feedproxy.google.com/~r/time/topstories/~3/YVCgpRa2j5A/"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNFS4ekhpPOusXhHf-tuvHMfwXIJHg&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084156665&ei=IQzaW4jTG47o3AHKo4HgBA&url=https://www.bbc.com/news/world-us-canada-46046864"
+			},
+			{ "url": "https://www.bbc.co.uk/news/world-us-canada-46046864" },
+			{
+				"url": "https://www.nytimes.com/2018/10/30/science/hawaii-telescope-mauna-kea.html?partner=rss&emc=rss"
+			},
+			{
+				"url": "https://www.cbc.ca/news/technology/thirty-meter-telescope-1.4886136?cmp=rss"
+			},
+			{
+				"url": "https://phys.org/news/2018-10-hurricane-oscar-satellite-imagery-one-eyed.html"
+			},
+			{
+				"url": "https://www.eurekalert.org/pub_releases/2018-10/nsfc-hoo103018.php"
+			},
+			{
+				"url": "https://www.eurekalert.org/pub_releases/2018-10/nsfc-nga103118.php"
+			},
+			{
+				"url": "https://www.eurekalert.org/pub_releases/2018-10/nsfc-ncg103118.php"
+			},
+			{
+				"url": "https://phys.org/news/2018-11-nasa-hurricane-oscar-transitioning-extratropical.html"
+			},
+			{ "url": "https://www.bbc.co.uk/news/world-europe-46057448" },
+			{
+				"url": "http://feedproxy.google.com/~r/thedailybeast/articles/~3/No4AAyI7BgM/murder-investigation-opened-after-bones-discovered-in-vaticans-back-yard"
+			},
+			{
+				"url": "http://www.abc.net.au/news/2018-11-01/missing-girl-in-vatican-human-bone-found/10453808"
+			},
+			{
+				"url": "http://www.abc.net.au/news/2018-11-01/human-bone-found-inside-vatican-could-solve-decades-old-mystery/10453808"
+			},
+			{
+				"url": "https://www.washingtonpost.com/national/religion/missing-girls-family-presses-vatican-about-found-bones/2018/10/31/1f5cc7c0-dcf8-11e8-8bac-bfe01fcdc3a6_story.html"
+			},
+			{
+				"url": "https://www.engadget.com/2018/11/01/super-smash-bros-ultimate-story-mode-single-player-world-of-light/"
+			},
+			{
+				"url": "https://www.theverge.com/2018/11/1/18051600/smash-bros-ultimate-switch-nintendo-ken-incineroar-pokemon"
+			},
+			{
+				"url": "https://www.theverge.com/2018/11/1/18051600/smash-bros-ultimate-switch-piranha-plant-ken-incineroar-pokemon"
+			},
+			{
+				"url": "https://www.theverge.com/2018/11/1/18051500/super-smash-bros-ultimate-world-nintendo-switch"
+			},
+			{
+				"url": "http://feeds.ign.com/~r/ign/all/~3/UpNQJjSrbbE/ken-masters-echo-and-incineroar-join-super-smash-bros-roster"
+			},
+			{
+				"url": "https://www.apkmirror.com/apk/samsung-rd-institute-india-noida/usb-backup/usb-backup-17-1-63-release/"
+			},
+			{
+				"url": "https://www.apkmirror.com/apk/samsung-electronics-co-ltd/samsung-checkout/samsung-checkout-1-0-8-release/"
+			},
+			{
+				"url": "https://www.apkmirror.com/apk/samsung-electronics-co-ltd/samsung-contacts/samsung-contacts-3-4-08-12-release/"
+			},
+			{
+				"url": "https://www.apkmirror.com/apk/samsung-electronics-co-ltd/samsung-themes/samsung-themes-4-2-11-81016-release/"
+			},
+			{
+				"url": "https://www.apkmirror.com/apk/samsung-electronics-co-ltd/samsung-messages/samsung-messages-10-0-00-27-release/"
+			},
+			{
+				"url": "http://www.hardocp.com/news/2018/11/01/isss_supercomputer_ready_for_service/"
+			},
+			{
+				"url": "http://www.techradar.com/news/hpe-and-nasa-team-up-to-take-pcs-into-space"
+			},
+			{
+				"url": "https://www.techspot.com/news/77204-international-space-station-supercomputer-gets-extended-stay.html"
+			},
+			{
+				"url": "https://phys.org/news/2018-11-super-computer-cloud-astronauts-space.html"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNEx5kFBYKMQz_7jP0ADA9gjRdwg8g&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780083863653&ei=eYbYW-DEMtWP3QH8mILIBA&url=https://phys.org/news/2018-10-nasa-machines.html"
+			},
+			{
+				"url": "http://feedproxy.google.com/~r/Techcrunch/~3/65WH7YNB6HQ/"
+			},
+			{
+				"url": "https://www.theverge.com/2018/10/30/18044670/waymo-fully-driverless-car-permit-california-dmv"
+			},
+			{ "url": "http://feeds.mashable.com/~r/Mashable/~3/WQh8IdvETWM/" },
+			{ "url": "https://arstechnica.com/?p=1403935" },
+			{
+				"url": "http://rss.slashdot.org/~r/Slashdot/slashdot/~3/yKcrtaiv1hI/waymo-gets-the-green-light-to-test-fully-driverless-cars-in-california"
+			},
+			{
+				"url": "https://blog.system76.com/post/179592732883/system76-on-us-manufacturing-and-open-hardware"
+			},
+			{
+				"url": "https://betanews.com/2018/10/26/system76-open-source-thelio-linux/"
+			},
+			{
+				"url": "http://feedproxy.google.com/~r/Phoronix/~3/PrrwAaplg2A/scan.php"
+			},
+			{
+				"url": "https://www.gamingonlinux.com/articles/system76-shared-some-more-details-to-clear-up-some-questions-about-their-open-hardware-manufacturing.12860"
+			},
+			{
+				"url": "https://www.gamingonlinux.com/articles/system76-reveal-the-thelio-their-new-custom-built-linux-desktop-with-three-versions.12863"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNFG8YW6qLcPB10si3n7OnD0UA6liA&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780083429801&ei=uznYW5LFA8G63QGzn4rICQ&url=https://www.middlewichguardian.co.uk/news/17187022.south-cheshire-ccg-raise-awareness-of-seasonal-affective-disorder/"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNEODv-N94viSLdab-DIvxwwM4qT_Q&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780083429801&ei=2VnYW_iQF82f3QGwlargAw&url=http://www.kxxv.com/story/39382888/light-therapy-for-seasonal-affective-disorder-tips-for-picking-the-right-light"
+			},
+			{
+				"url": "https://www.elitedaily.com/p/heres-how-daylight-saving-time-affects-your-mood-when-darkness-tries-to-steal-your-light-13034936"
+			},
+			{
+				"url": "https://lifehacker.com/how-to-manage-your-seasonal-depression-1829966671"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNFIioLp1TXUNA2CBR8Wc8O48w_aJg&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780083975855&ei=Jp_YW4DBFNaZ3QGp75jwDw&url=https://www.npr.org/sections/health-shots/2018/10/30/662127406/when-adolescents-give-up-pot-their-cognition-quickly-improves"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNFGJVlqSjNbXeiJw7QnmpwKGYyNVg&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780085140474&ei=AuLZW4DYNoSP3QHftI_oAQ&url=https://www.theblaze.com/news/2018/10/31/study-shows-cognition-improves-in-adolescents-who-stop-using-marijuana"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNEEHsbRsPB_f-tX6gN3vIgCaJqTxA&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780085140474&ei=VuzZW6C8II7o3AHKo4HgBA&url=http://news.prairiepublic.org/post/when-adolescents-give-pot-their-cognition-quickly-improves"
+			},
+			{
+				"url": "https://www.theguardian.com/society/2018/oct/30/quitting-cannabis-can-lead-better-memory-cognition-us-research"
+			},
+			{
+				"url": "https://www.webmd.com/parenting/news/20181030/in-teens-halting-pot-use-clears-thinking-issues?src=RSS_PUBLIC"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNHEl-9rKGBsSOkSfcPVew7q5M5B3Q&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780083837613&ei=ziPZW5D3HISP3QHftI_oAQ&url=https://www.webmd.com/sexual-conditions/news/20181030/the-real-reasons-parents-refuse-hpv-vaccination"
+			},
+			{
+				"url": "https://www.futurity.org/hpv-vaccine-parents-teenagers-1896712/"
+			},
+			{
+				"url": "https://www.scientificamerican.com/article/why-oral-cancer-threatens-men/"
+			},
+			{
+				"url": "https://www.upi.com/Health_News/2018/10/30/Safety-concerns-are-main-reason-parents-hesitate-on-HPV-vaccine/9161540928780/"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNHLh7V3GfE_fHknUQpdefodgMYLPA&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084318818&ei=yvvYW4DZDNaZ3QGp75jwDw&url=https://www.cnn.com/2018/10/30/health/bmi-death-study/index.html"
+			},
+			{
+				"url": "http://rss.cnn.com/~r/rss/cnn_latest/~3/s7GkxvgmGLM/index.html"
+			},
+			{
+				"url": "https://www.eurekalert.org/pub_releases/2018-10/lsoh-bm103018.php"
+			},
+			{
+				"url": "https://tribune.com.pk/story/1838559/4-obese-skinny-can-cut-four-years-life-study/"
+			},
+			{
+				"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=uk&usg=AFQjCNGBdtxlkAtzXmj-K-n69vTZW9ti8w&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084318818&ei=xz_ZW8DqG47o3AHKo4HgBA&url=https://www.thesun.co.uk/news/7624072/being-either-too-fat-or-too-skinny-can-significantly-increase-your-risk-of-dying-younger/"
+			},
+			{
+				"url": "https://www.theguardian.com/society/shortcuts/2018/oct/30/get-a-grip-are-smartphones-ruining-our-manual-dexterity"
+			},
+			{ "url": "https://www.bbc.co.uk/news/uk-46036095" },
+			{
+				"url": "https://www.newscientist.com/article/2184114-theres-no-evidence-that-screen-time-makes-surgeons-bad-at-their-job/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news&campaign_id=RSS%7CNSNS-news"
+			},
+			{
+				"url": "https://www.telegraph.co.uk/news/2018/10/30/surgery-students-cant-sew-cut-spend-much-time-screens-warns/"
+			},
+			{
+				"url": "https://www.theguardian.com/society/2018/oct/30/medical-students-raised-on-screens-lack-skills-for-surgery"
+			},
+			{
+				"url": "http://newalbumreleases.net/116783/peggy-march-the-essential-peggy-march-the-rca-years-2018/"
+			},
+			{
+				"url": "http://newalbumreleases.net/116791/ac-dc-westwood-one-deluxe-concert-2018/"
+			},
+			{
+				"url": "http://newalbumreleases.net/116799/black-tongue-nadir-2018/"
+			},
+			{
+				"url": "http://newalbumreleases.net/116784/drifters-under-the-boardwalk-2018/"
+			},
+			{
+				"url": "http://newalbumreleases.net/116786/louden-swain-splitting-the-seams-2018/"
+			},
+			{ "url": "http://feeds.mashable.com/~r/Mashable/~3/9U3Z1Ks8d_Y/" },
+			{
+				"url": "https://news.avclub.com/poldarks-josh-whitehouse-to-star-probably-die-in-hbos-1830151111"
+			},
+			{
+				"url": "http://feedproxy.google.com/~r/time/topstories/~3/OhEPHodmNxQ/"
+			},
+			{
+				"url": "https://www.slashfilm.com/game-of-thrones-prequel-title-debunked/"
+			},
+			{
+				"url": "https://www.slashfilm.com/game-of-thrones-prequel-cast/"
+			},
+			{
+				"url": "https://www.engadget.com/2018/11/01/netflix-oscar-hopefuls-theater-release/"
+			},
+			{
+				"url": "https://www.theverge.com/2018/11/1/18051576/netflix-theater-debut-films-screening-strategy-streaming"
+			},
+			{
+				"url": "http://feeds.ign.com/~r/ign/all/~3/cX1OSnZwGrY/netflix-is-changing-things-up-by-releasing-3-movies-in-theaters-early"
+			},
+			{ "url": "http://feeds.mashable.com/~r/Mashable/~3/ofBYevK6CPE/" },
+			{
+				"url": "https://news.avclub.com/netflix-begins-innovative-tactic-of-showing-its-movies-1830153320"
+			},
+			{
+				"url": "http://feeds.celebritybabies.com/~r/celebrity-babies/~3/KU5fM9HsIZI/"
+			},
+			{
+				"url": "http://feeds.celebritybabies.com/~r/celebrity-babies/~3/M8g9MIsshqY/"
+			},
+			{
+				"url": "http://feeds.celebritybabies.com/~r/celebrity-babies/~3/GYWpN4oU_gw/"
+			},
+			{
+				"url": "https://hollywoodlife.com/2018/10/30/jenna-dewan-steve-kazee-dating/"
+			},
+			{
+				"url": "https://hollywoodlife.com/2018/11/01/jenna-dewan-fairy-halloween-costume-2018-photo/"
+			},
+			{
+				"url": "https://www.bleedingcool.com/2018/10/30/poison-ivy-die-heroes-in-crisis-2/"
+			},
+			{
+				"url": "https://www.bleedingcool.com/2018/10/31/poison-ivy-heroes-in-crisis-2/"
+			},
+			{
+				"url": "https://www.bleedingcool.com/2018/10/31/harley-quinn-good-batman-superman-heroes-in-crisis-2/"
+			},
+			{
+				"url": "https://www.bleedingcool.com/2018/11/01/heroes-in-crisis-3-origin-sanctuary/"
+			},
+			{
+				"url": "http://feeds.newsarama.com/~r/newsaramacomics/~3/EehrmsRqqFk/42557-heroes-in-crisis-2-spoilers-new-clue-to-killer-s-identity.html"
 			}
 		],
 		"groups": [
 			{
-				"label": "Group1",
+				"label": "story__society",
 				"items": [
 					{
-						"url": "https://www.engadget.com/2018/10/28/fallout-76-not-coming-to-switch/"
+						"url": "https://www.washingtonpost.com/politics/a-mass-shooting-in-pittsburgh-and-a-trump-visit-expose-a-divided-america/2018/10/30/93cbb0d4-dbc8-11e8-85df-7a6b4d25cfbb_story.html"
+					},
+					{
+						"url": "https://www.washingtonpost.com/politics/the-fix/heres-the-small-protest-trump-says-he-didnt-see-in-pittsburgh/2018/10/31/c00d1483-7ec5-4764-9921-877778711b08_story.html"
+					},
+					{
+						"url": "https://www.washingtonpost.com/politics/tree-of-life-rabbi-says-he-saw-a-warm-and-personal-side-to-trump-that-surprised-him/2018/11/01/df6655ae-ddca-11e8-85df-7a6b4d25cfbb_story.html"
+					},
+					{
+						"url": "https://www.theguardian.com/global/video/2018/oct/31/make-america-kind-again-pittsburgh-mourners-fill-streets-as-trump-visits-video"
+					},
+					{
+						"url": "https://www.theguardian.com/us-news/2018/oct/31/pittsburgh-funerals-shooting-victims-trump-protests"
+					},
+					{
+						"url": "https://slate.com/news-and-politics/2018/10/trump-birthright-radical-ideology-white-supremacy.html"
+					},
+					{
+						"url": "http://www.tmz.com/2018/10/30/judge-mathis-president-trump-birthright-citizenship-issue/"
+					},
+					{
+						"url": "http://feedproxy.google.com/~r/Talking-Points-Memo/~3/aiLcYuE9TlU/nope-the-president-cant-end-birthright-citizenship"
+					},
+					{
+						"url": "https://www.newyorker.com/news/our-columnists/trump-birthright-citizenship-and-the-mainstreaming-of-unimaginable-ideas"
+					},
+					{
+						"url": "http://feeds.boingboing.net/~r/boingboing/iBag/~3/b8nPUg-74X0/judge-schools-fox-and-friends.html"
+					},
+					{
+						"url": "http://feeds.reuters.com/~r/Reuters/worldNews/~3/qA8vbec49MM/pakistani-court-overturns-death-sentence-for-christian-woman-in-blasphemy-case-idUSKCN1N50EK"
+					},
+					{
+						"url": "http://feeds.reuters.com/~r/Reuters/worldNews/~3/D_C_yDPlBes/pakistan-frees-christian-woman-facing-death-in-blasphemy-case-idUSKCN1N42YK"
+					},
+					{
+						"url": "http://feeds.reuters.com/~r/Reuters/worldNews/~3/LdGMpKs-F2E/pakistani-islamist-party-calls-for-death-of-judges-who-freed-christian-woman-sentenced-for-blasphemy-idUSKCN1N50UI"
+					},
+					{
+						"url": "http://feeds.reuters.com/~r/Reuters/worldNews/~3/nKFlVjOXy9s/pakistan-islamists-protest-as-christian-woman-freed-in-blasphemy-case-idUSKCN1N42YK"
+					},
+					{
+						"url": "http://feeds.reuters.com/~r/Reuters/worldNews/~3/aiC58Y9q3Ng/christian-womans-release-in-pakistan-sparks-protests-threats-idUSKCN1N42YK"
+					},
+					{
+						"url": "http://www.tmz.com/2018/10/30/whitey-bulger-dead-prison-crime-boss-mob-west-virginia/"
+					},
+					{
+						"url": "http://www.tmz.com/2018/10/31/whitey-bulger-attack-tongue-cut-eye-gouging-mob-hit/"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNGQ5vMTKRJozjdcGYnkevzCaDj8yA&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084743924&ei=RPPZW-iBAtaZ3QGp75jwDw&url=https://www.newschannel10.com/2018/10/31/official-mafia-hit-man-is-suspect-death-whitey-bulger/"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNFeidLm_1tWw29-82krVhoNfHRx0Q&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780083750371&ei=f5DYW_CJNo7o3AHKo4HgBA&url=https://www.bostonglobe.com/metro/2018/10/30/james-whitey-bulger-moved-hazelton-federal-prison-west-virginia/2lFAoqNktMi5fjaJ8PWRAI/story.html"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNFOQ9dR0LHt1cqiSz4fJ7KGyW3ZfA&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084743924&ei=Id_ZW8CyBNaZ3QGp75jwDw&url=https://nypost.com/2018/10/31/juror-who-helped-send-whitey-bulger-to-prison-deeply-saddened-by-killing/"
+					},
+					{
+						"url": "https://seekingalpha.com/article/4216460-british-pound-stalls-momentum-brexit-suffers?source=feed_all_articles"
+					},
+					{
+						"url": "http://feedproxy.google.com/~r/clusterstock/~3/ZxTDejvgdCI/city-of-london-eu-uk-brexit-negotiators-agree-financial-services-deal-2018-11"
+					},
+					{
+						"url": "https://www.theguardian.com/politics/2018/oct/30/irish-government-brit-bashing-hard-brexit-rhetoric-ulster-volunteer-force-uvf"
+					},
+					{ "url": "https://www.bbc.co.uk/news/business-46053283" },
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNE_UDMgC9h569qOWAf175mDKa0KvQ&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084018232&ei=UvraW9j0FdaZ3QGp75jwDw&url=https://uk.reuters.com/article/uk-britain-eu-financial-services/uk-eu-close-to-brexit-deal-on-financial-services-uk-official-idUKKCN1N639U"
 					}
 				]
 			},
 			{
-				"label": "Group2",
+				"label": "story__business",
 				"items": [
 					{
-						"url": "https://techcrunch.com/2018/10/28/silicon-valleys-sovereign-wealth-problem/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Techcrunch+%28TechCrunch%29"
+						"url": "https://seekingalpha.com/article/4215603-mondelez-international-inc-2018-q3-results-earnings-call-slides?source=feed_all_articles"
+					},
+					{
+						"url": "https://seekingalpha.com/article/4215650-veracyte-inc-2018-q3-results-earnings-call-slides?source=feed_all_articles"
+					},
+					{
+						"url": "https://seekingalpha.com/article/4215741-aercap-holdings-n-v-2018-q3-results-earnings-call-slides?source=feed_all_articles"
+					},
+					{
+						"url": "https://seekingalpha.com/article/4216098-zendesk-inc-2018-q3-results-earnings-call-slides?source=feed_all_articles"
+					},
+					{
+						"url": "https://seekingalpha.com/article/4216101-chesapeake-energy-corporation-2018-q3-results-earnings-call-slides?source=feed_all_articles"
+					},
+					{
+						"url": "http://feeds.reuters.com/~r/reuters/businessNews/~3/lIdMMs64EPE/facebook-misses-estimates-for-monthly-users-revenue-idUSKCN1N42NR"
+					},
+					{
+						"url": "http://feeds.reuters.com/~r/reuters/businessNews/~3/s9zhXAXOkGU/facebooks-rise-in-profit-outweighs-slow-user-sales-growth-idUSKCN1N42NR"
+					},
+					{
+						"url": "http://feeds.reuters.com/~r/reuters/businessNews/~3/IUmC2CoBDIU/spotify-faults-itself-for-margin-gains-stock-hits-new-lows-idUSKCN1N64JE"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNG6Jid5rnpN-GU9lCSWtUSVdJxNkQ&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084193830&ei=hqPZW7iQLM2f3QGwlargAw&url=https://www.businessinsider.com/facebook-q3-2018-earnings-2018-10"
+					},
+					{ "url": "http://www.billboard.com/node/8482731" },
+					{
+						"url": "http://www.marketwatch.com/news/story.asp?guid=%7B87A52D04-DDD9-11E8-AF74-E52BB354A906%7D&siteid=rss&rss=1"
+					},
+					{
+						"url": "http://feeds.marketwatch.com/~r/marketwatch/marketpulse/~3/pp0-7rj7aHA/story.aspx"
+					},
+					{
+						"url": "http://feeds.marketwatch.com/~r/marketwatch/marketpulse/~3/0geAjtRgnKw/story.aspx"
+					},
+					{
+						"url": "http://feeds.marketwatch.com/~r/marketwatch/marketpulse/~3/DBEB2IFt1Qo/story.aspx"
+					},
+					{
+						"url": "http://feeds.marketwatch.com/~r/marketwatch/marketpulse/~3/g7yzAhzKzcg/story.aspx"
+					},
+					{
+						"url": "http://timesofindia.indiatimes.com/india/sc-declines-urgent-hearing-on-kartis-plea-seeking-permission-to-go-abroad/articleshow/66456549.cms"
+					},
+					{
+						"url": "https://www.moneycontrol.com/news/current-affairs/court-ordervijay-mallya-plea-against-ed-proceedings-likelyoctober-30_11600081.html"
+					},
+					{
+						"url": "https://www.moneycontrol.com/news/current-affairs/court-rejects-vijay-mallya39s-plea-against-ed-proceedings-for-feo-tag_11618201.html"
+					},
+					{
+						"url": "https://www.moneycontrol.com/news/current-affairs/ed-seeks-custodial-interrogationchidambaramaircel-maxis-money-laundering-case_11624041.html"
+					},
+					{
+						"url": "https://economictimes.indiatimes.com/politics/ed-seeks-custodial-interrogation-of-chidambaram-in-aircel-maxis-case/articleshow/66445499.cms"
+					},
+					{
+						"url": "http://feedproxy.google.com/~r/time/topstories/~3/tFJmRYzGPVs/"
+					},
+					{
+						"url": "http://feedproxy.google.com/~r/time/topstories/~3/gPGbSVaP3ew/"
+					},
+					{
+						"url": "https://feeds.feedblitz.com/~/577762692/0/alternet"
+					},
+					{
+						"url": "https://www.scientificamerican.com/article/the-vulnerabilities-of-our-voting-machines/"
+					},
+					{
+						"url": "https://www.cbsnews.com/news/what-are-bot-farms-and-why-do-hackers-target-elections-cybersecurity/"
+					}
+				]
+			},
+			{
+				"label": "story__technology",
+				"items": [
+					{
+						"url": "https://www.engadget.com/2018/11/01/super-smash-bros-ultimate-story-mode-single-player-world-of-light/"
+					},
+					{
+						"url": "https://www.theverge.com/2018/11/1/18051600/smash-bros-ultimate-switch-nintendo-ken-incineroar-pokemon"
+					},
+					{
+						"url": "https://www.theverge.com/2018/11/1/18051600/smash-bros-ultimate-switch-piranha-plant-ken-incineroar-pokemon"
+					},
+					{
+						"url": "https://www.theverge.com/2018/11/1/18051500/super-smash-bros-ultimate-world-nintendo-switch"
+					},
+					{
+						"url": "http://feeds.ign.com/~r/ign/all/~3/UpNQJjSrbbE/ken-masters-echo-and-incineroar-join-super-smash-bros-roster"
+					},
+					{
+						"url": "https://www.apkmirror.com/apk/samsung-rd-institute-india-noida/usb-backup/usb-backup-17-1-63-release/"
+					},
+					{
+						"url": "https://www.apkmirror.com/apk/samsung-electronics-co-ltd/samsung-checkout/samsung-checkout-1-0-8-release/"
+					},
+					{
+						"url": "https://www.apkmirror.com/apk/samsung-electronics-co-ltd/samsung-contacts/samsung-contacts-3-4-08-12-release/"
+					},
+					{
+						"url": "https://www.apkmirror.com/apk/samsung-electronics-co-ltd/samsung-themes/samsung-themes-4-2-11-81016-release/"
+					},
+					{
+						"url": "https://www.apkmirror.com/apk/samsung-electronics-co-ltd/samsung-messages/samsung-messages-10-0-00-27-release/"
+					},
+					{
+						"url": "http://www.hardocp.com/news/2018/11/01/isss_supercomputer_ready_for_service/"
+					},
+					{
+						"url": "http://www.techradar.com/news/hpe-and-nasa-team-up-to-take-pcs-into-space"
+					},
+					{
+						"url": "https://www.techspot.com/news/77204-international-space-station-supercomputer-gets-extended-stay.html"
+					},
+					{
+						"url": "https://phys.org/news/2018-11-super-computer-cloud-astronauts-space.html"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNEx5kFBYKMQz_7jP0ADA9gjRdwg8g&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780083863653&ei=eYbYW-DEMtWP3QH8mILIBA&url=https://phys.org/news/2018-10-nasa-machines.html"
+					},
+					{
+						"url": "http://feedproxy.google.com/~r/Techcrunch/~3/65WH7YNB6HQ/"
+					},
+					{
+						"url": "https://www.theverge.com/2018/10/30/18044670/waymo-fully-driverless-car-permit-california-dmv"
+					},
+					{
+						"url": "http://feeds.mashable.com/~r/Mashable/~3/WQh8IdvETWM/"
+					},
+					{ "url": "https://arstechnica.com/?p=1403935" },
+					{
+						"url": "http://rss.slashdot.org/~r/Slashdot/slashdot/~3/yKcrtaiv1hI/waymo-gets-the-green-light-to-test-fully-driverless-cars-in-california"
+					},
+					{
+						"url": "https://blog.system76.com/post/179592732883/system76-on-us-manufacturing-and-open-hardware"
+					},
+					{
+						"url": "https://betanews.com/2018/10/26/system76-open-source-thelio-linux/"
+					},
+					{
+						"url": "http://feedproxy.google.com/~r/Phoronix/~3/PrrwAaplg2A/scan.php"
+					},
+					{
+						"url": "https://www.gamingonlinux.com/articles/system76-shared-some-more-details-to-clear-up-some-questions-about-their-open-hardware-manufacturing.12860"
+					},
+					{
+						"url": "https://www.gamingonlinux.com/articles/system76-reveal-the-thelio-their-new-custom-built-linux-desktop-with-three-versions.12863"
+					}
+				]
+			},
+			{
+				"label": "story__arts",
+				"items": [
+					{
+						"url": "http://newalbumreleases.net/116783/peggy-march-the-essential-peggy-march-the-rca-years-2018/"
+					},
+					{
+						"url": "http://newalbumreleases.net/116791/ac-dc-westwood-one-deluxe-concert-2018/"
+					},
+					{
+						"url": "http://newalbumreleases.net/116799/black-tongue-nadir-2018/"
+					},
+					{
+						"url": "http://newalbumreleases.net/116784/drifters-under-the-boardwalk-2018/"
+					},
+					{
+						"url": "http://newalbumreleases.net/116786/louden-swain-splitting-the-seams-2018/"
+					},
+					{
+						"url": "http://feeds.mashable.com/~r/Mashable/~3/9U3Z1Ks8d_Y/"
+					},
+					{
+						"url": "https://news.avclub.com/poldarks-josh-whitehouse-to-star-probably-die-in-hbos-1830151111"
+					},
+					{
+						"url": "http://feedproxy.google.com/~r/time/topstories/~3/OhEPHodmNxQ/"
+					},
+					{
+						"url": "https://www.slashfilm.com/game-of-thrones-prequel-title-debunked/"
+					},
+					{
+						"url": "https://www.slashfilm.com/game-of-thrones-prequel-cast/"
+					},
+					{
+						"url": "https://www.engadget.com/2018/11/01/netflix-oscar-hopefuls-theater-release/"
+					},
+					{
+						"url": "https://www.theverge.com/2018/11/1/18051576/netflix-theater-debut-films-screening-strategy-streaming"
+					},
+					{
+						"url": "http://feeds.ign.com/~r/ign/all/~3/cX1OSnZwGrY/netflix-is-changing-things-up-by-releasing-3-movies-in-theaters-early"
+					},
+					{
+						"url": "http://feeds.mashable.com/~r/Mashable/~3/ofBYevK6CPE/"
+					},
+					{
+						"url": "https://news.avclub.com/netflix-begins-innovative-tactic-of-showing-its-movies-1830153320"
+					},
+					{
+						"url": "http://feeds.celebritybabies.com/~r/celebrity-babies/~3/KU5fM9HsIZI/"
+					},
+					{
+						"url": "http://feeds.celebritybabies.com/~r/celebrity-babies/~3/M8g9MIsshqY/"
+					},
+					{
+						"url": "http://feeds.celebritybabies.com/~r/celebrity-babies/~3/GYWpN4oU_gw/"
+					},
+					{
+						"url": "https://hollywoodlife.com/2018/10/30/jenna-dewan-steve-kazee-dating/"
+					},
+					{
+						"url": "https://hollywoodlife.com/2018/11/01/jenna-dewan-fairy-halloween-costume-2018-photo/"
+					},
+					{
+						"url": "https://www.bleedingcool.com/2018/10/30/poison-ivy-die-heroes-in-crisis-2/"
+					},
+					{
+						"url": "https://www.bleedingcool.com/2018/10/31/poison-ivy-heroes-in-crisis-2/"
+					},
+					{
+						"url": "https://www.bleedingcool.com/2018/10/31/harley-quinn-good-batman-superman-heroes-in-crisis-2/"
+					},
+					{
+						"url": "https://www.bleedingcool.com/2018/11/01/heroes-in-crisis-3-origin-sanctuary/"
+					},
+					{
+						"url": "http://feeds.newsarama.com/~r/newsaramacomics/~3/EehrmsRqqFk/42557-heroes-in-crisis-2-spoilers-new-clue-to-killer-s-identity.html"
+					}
+				]
+			},
+			{
+				"label": "story__science",
+				"items": [
+					{
+						"url": "http://rss.slashdot.org/~r/Slashdot/slashdot/~3/FJXRP8yezao/about-that-monstrous-black-hole-were-all-orbiting"
+					},
+					{
+						"url": "https://www.quantamagazine.org/astronomers-creep-up-to-the-edge-of-the-milky-ways-black-hole-20181030/"
+					},
+					{
+						"url": "https://www.sciencedaily.com/releases/2018/10/181031080621.htm"
+					},
+					{
+						"url": "https://motherboard.vice.com/en_us/article/zm9jm8/astronomers-find-strong-evidence-there-is-a-supermassive-black-hole-at-the-center-of-our-galaxy"
+					},
+					{
+						"url": "http://feedproxy.google.com/~r/TheArchaeologyNewsNetwork/~3/yyxLH1Wt-ok/astronomers-confirm-collision-between.html"
+					},
+					{
+						"url": "https://www.engadget.com/2018/10/30/kepler-space-telescope-retires/"
+					},
+					{
+						"url": "https://www.theverge.com/2018/10/30/18044152/nasa-kepler-space-telescope-out-of-fuel-dead"
+					},
+					{
+						"url": "http://feeds.mashable.com/~r/Mashable/~3/OQQ2tDTAYSM/"
+					},
+					{
+						"url": "https://hackaday.com/2018/10/30/kepler-closes-eyes-after-a-decade-of-discovery/"
+					},
+					{
+						"url": "http://feedproxy.google.com/~r/time/topstories/~3/VoMkMGTo2RQ/"
+					},
+					{
+						"url": "http://feedproxy.google.com/~r/time/topstories/~3/YVCgpRa2j5A/"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNFS4ekhpPOusXhHf-tuvHMfwXIJHg&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084156665&ei=IQzaW4jTG47o3AHKo4HgBA&url=https://www.bbc.com/news/world-us-canada-46046864"
+					},
+					{
+						"url": "https://www.bbc.co.uk/news/world-us-canada-46046864"
+					},
+					{
+						"url": "https://www.nytimes.com/2018/10/30/science/hawaii-telescope-mauna-kea.html?partner=rss&emc=rss"
+					},
+					{
+						"url": "https://www.cbc.ca/news/technology/thirty-meter-telescope-1.4886136?cmp=rss"
+					},
+					{
+						"url": "https://phys.org/news/2018-10-hurricane-oscar-satellite-imagery-one-eyed.html"
+					},
+					{
+						"url": "https://www.eurekalert.org/pub_releases/2018-10/nsfc-hoo103018.php"
+					},
+					{
+						"url": "https://www.eurekalert.org/pub_releases/2018-10/nsfc-nga103118.php"
+					},
+					{
+						"url": "https://www.eurekalert.org/pub_releases/2018-10/nsfc-ncg103118.php"
+					},
+					{
+						"url": "https://phys.org/news/2018-11-nasa-hurricane-oscar-transitioning-extratropical.html"
+					},
+					{
+						"url": "https://www.bbc.co.uk/news/world-europe-46057448"
+					},
+					{
+						"url": "http://feedproxy.google.com/~r/thedailybeast/articles/~3/No4AAyI7BgM/murder-investigation-opened-after-bones-discovered-in-vaticans-back-yard"
+					},
+					{
+						"url": "http://www.abc.net.au/news/2018-11-01/missing-girl-in-vatican-human-bone-found/10453808"
+					},
+					{
+						"url": "http://www.abc.net.au/news/2018-11-01/human-bone-found-inside-vatican-could-solve-decades-old-mystery/10453808"
+					},
+					{
+						"url": "https://www.washingtonpost.com/national/religion/missing-girls-family-presses-vatican-about-found-bones/2018/10/31/1f5cc7c0-dcf8-11e8-8bac-bfe01fcdc3a6_story.html"
+					}
+				]
+			},
+			{
+				"label": "story__environment",
+				"items": [
+					{
+						"url": "https://www.thehindu.com/sci-tech/energy-and-environment/earths-wild-animal-population-plummets-60-in-44-years-wwf/article25370522.ece"
+					},
+					{
+						"url": "https://www.vox.com/science-and-health/2018/10/30/18042150/wwf-living-planet-report-vertebrate-loss"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNEigJZVztVa-UCFixacQB1r1dNflA&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780083207575&ei=ZjXYW6iuCNm-3AHT-q2ICw&url=https://www.bbc.com/news/science-environment-46028862"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNGi969BtAVlbhp5bvMlbx7z24Cg_g&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780085233175&ei=UcfaW_iEG5mCpwfE7YX4Dg&url=http://time.com/5441282/five-countries-worlds-last-wilderness/"
+					},
+					{
+						"url": "https://newrepublic.com/article/151981/extinction-wilderness-untouched-lands-oceans-disappearing"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNFEVQ-MhjvtGgCdLeKnKIUCNTCo_w&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780085990469&ei=CwLbW7C0E5mCpwfE7YX4Dg&url=https://www.livescience.com/63982-daylight-saving-time-ends.html"
+					},
+					{
+						"url": "http://feedproxy.google.com/~r/Livesciencecom/~3/YpRkXBRQIdA/63982-daylight-saving-time-ends.html"
+					},
+					{
+						"url": "http://www.independent.co.uk/life-style/daylight-saving-time-when-clocks-turn-back-us-2018-fall-lose-sleep-why-a8607401.html"
+					},
+					{
+						"url": "https://www.news5cleveland.com/news/local-news/oh-cuyahoga/daylight-saving-time-2018-when-do-we-set-our-clocks-back-"
+					},
+					{
+						"url": "https://www.dispatch.com/news/20181101/daylight-saving-time-4-questions-answered?rssfeed=true"
+					},
+					{
+						"url": "https://phys.org/news/2018-10-seabed-future.html"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=in&usg=AFQjCNHb6r7qX-6DIeXw_D8p0dcMOTmzGg&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084031140&ei=CqDYW7jdPISP3QHftI_oAQ&url=https://www.business-standard.com/article/news-ani/human-made-co2-dissolving-seafloor-118103001520_1.html"
+					},
+					{
+						"url": "https://motherboard.vice.com/en_us/article/d3qaek/the-seafloor-is-dissolving-because-climate-change"
+					},
+					{
+						"url": "https://economictimes.indiatimes.com/news/economy/foreign-trade/huge-potential-in-ict-aerospace-healthcare-agriculture-infrastructure-to-boost-economic-ties-with-india-italy/articleshow/66413825.cms"
+					},
+					{
+						"url": "https://economictimes.indiatimes.com/news/economy/foreign-trade/india-italy-to-fast-track-trade-two-way-investments/articleshow/66434263.cms"
+					},
+					{
+						"url": "https://economictimes.indiatimes.com/news/economy/policy/india-china-to-undertake-joint-research-on-wto-reforms/articleshow/66464341.cms"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=in&usg=AFQjCNG1L-WwExZYKyDZadvC8w0plEkrfg&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780082238306&ei=mKDYW6jgIYyS3QGHhLHgDg&url=http://www.easternmirrornagaland.com/india-italy-agree-to-share-knowledge-expedite-investments/"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=in&usg=AFQjCNEo8-ci1uGCR3JgFXPPd2YSr2xONQ&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780082238306&ei=56TYW4DPOYSP3QHftI_oAQ&url=https://timesofindia.indiatimes.com/business/india-business/india-italy-to-set-up-institutional-framework-to-enhance-economic-coop/articleshow/66435462.cms"
+					},
+					{
+						"url": "http://feedproxy.google.com/~r/TheArchaeologyNewsNetwork/~3/OAR4QQpJH7c/deforestation-triggered-mass-extinction.html"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNEF43p_sUZSti_hElkVYRb5TTGb7Q&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780082940911&ei=qHfXW4DKEcG63QGzn4rICQ&url=https://phys.org/news/2018-10-animal-species-extinct-haiti-deforestation.html"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNH82R6nC8TXj-jIPYmkkgbdSfpgGQ&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084229171&ei=y9PYW4DwLtaZ3QGp75jwDw&url=https://www.sciencedaily.com/releases/2018/10/181029164650.htm"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNEIwgRoy80jKkml2G7FLI2-MRhc8g&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084229171&ei=BtrYW_iiEc2f3QGwlargAw&url=https://www.mnn.com/earth-matters/wilderness-resources/stories/haiti-now-almost-completely-deforested"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNEL56GaaDZ9LS9DwgD5B4x11FllPQ&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084385658&ei=pv3YW8iRHI7o3AHKo4HgBA&url=https://yubanet.com/enviro/animal-species-becoming-extinct-in-haiti-as-deforestation-nearly-complete/"
+					}
+				]
+			},
+			{
+				"label": "story__sports",
+				"items": [
+					{
+						"url": "http://feedproxy.google.com/~r/time/topstories/~3/mtqaHPYzJaw/"
+					},
+					{
+						"url": "http://feeds.celebritybabies.com/~r/celebrity-babies/~3/-m8My2kAF08/"
+					},
+					{ "url": "http://www.bbc.co.uk/sport/gymnastics/46062997" },
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNECDL7fLZ0X-R-c-CTRwNyaB71xvQ&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780086372556&ei=nSDbW8iCIdWP3QH8mILIBA&url=https://www.usatoday.com/story/sports/columnist/nancy-armour/2018/11/01/simone-biles-makes-history-all-around-gold-world-championships/1844650002/"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNGtu7Kj2yvZl73B9BB86UsJUsBddw&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780086372556&ei=uiHbW6jOJ9aZ3QGp75jwDw&url=https://www.bbc.co.uk/sport/gymnastics/46062997"
+					},
+					{
+						"url": "http://www.espn.com/nfl/story/_/id/25126336/tom-brady-new-england-patriots-calls-aaron-rodgers-green-bay-packers-inspiring"
+					},
+					{
+						"url": "http://www.espn.com/blog/green-bay-packers/post/_/id/46118/aaron-rodgers-and-tom-brady-contemporaries-but-not-rivals"
+					},
+					{
+						"url": "http://feeds.reuters.com/~r/reuters/sportsNews/~3/Xm1y4PalPmg/rodgers-brady-matchup-highlights-packers-patriots-idUSKCN1N65FW"
+					},
+					{
+						"url": "https://www.complex.com/sports/2018/10/tom-brady-says-aaron-rodgers-inspiring"
+					},
+					{
+						"url": "https://dailycaller.com/2018/10/31/tom-brady-aaron-rodgers-inspiring/"
+					},
+					{
+						"url": "http://www.bbc.co.uk/sport/rugby-union/46037489"
+					},
+					{
+						"url": "http://www.bbc.co.uk/sport/rugby-union/46058544"
+					},
+					{
+						"url": "http://www.bbc.co.uk/sport/rugby-union/46059572"
+					},
+					{
+						"url": "https://www.telegraph.co.uk/rugby-union/2018/10/29/courtney-lawes-almost-certain-miss-england-match-against-south/"
+					},
+					{
+						"url": "https://www.telegraph.co.uk/rugby-union/2018/11/01/england-vs-south-africa-autumn-internationals-2018-time-kick/"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNHLYD5TA2Bgi0u_CFZkpGmlifyaCg&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084910816&ei=UTPaW_iBHIyS3QGHhLHgDg&url=http://www.espn.com/college-football/story/_/id/25137549/maryland-terrapins-coach-dj-durkin-fired-wake-probe"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNHFx0UyZleCjda0ofq8nL5s659ooQ&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084910816&ei=QzXaW7j_B9aZ3QGp75jwDw&url=http://www.espn.com/college-football/story/_/id/25137549/maryland-terrapins-coach-dj-durkin-fired-one-day-reinstatement"
+					},
+					{
+						"url": "http://www.espn.com/college-football/story/_/id/25128085/maryland-board-recommend-keeping-dj-durkin-damon-evans"
+					},
+					{
+						"url": "http://www.espn.com/college-football/story/_/id/25137549/maryland-terrapins-coach-dj-durkin-fired-wake-probe"
+					},
+					{
+						"url": "http://www.espn.com/college-football/story/_/id/25139194/marty-mcnair-father-jordan-calls-decision-fire-maryland-terrapins-coach-dj-durkin-step-right-direction"
+					},
+					{
+						"url": "https://bleacherreport.com/articles/2803734-mauricio-pochettino-exit-rumours-reportedly-concerning-tottenham-players"
+					},
+					{
+						"url": "https://www.telegraph.co.uk/football/2018/10/30/tottenham-players-fear-mauricio-pochettino-could-leave-summer/"
+					},
+					{
+						"url": "http://www.independent.co.uk/sport/football/premier-league/mauricio-pochettino-gary-neville-tottenham-hotspur-manchester-city-premier-league-efl-a8607761.html"
+					},
+					{
+						"url": "https://www.theguardian.com/football/blog/2018/oct/30/mauricio-pochettino-tottenham-stadium-white-hart-lane"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=uk&usg=AFQjCNEQnraZKwjp7bKh_ajk16YUwYG2cA&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780085476453&ei=qTXaW9iDEcG63QGzn4rICQ&url=https://www.itv.com/news/2018-10-31/player-welfare-comes-first-for-tottenham-boss-mauricio-pochettino/"
+					}
+				]
+			},
+			{
+				"label": "story__health",
+				"items": [
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNFG8YW6qLcPB10si3n7OnD0UA6liA&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780083429801&ei=uznYW5LFA8G63QGzn4rICQ&url=https://www.middlewichguardian.co.uk/news/17187022.south-cheshire-ccg-raise-awareness-of-seasonal-affective-disorder/"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNEODv-N94viSLdab-DIvxwwM4qT_Q&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780083429801&ei=2VnYW_iQF82f3QGwlargAw&url=http://www.kxxv.com/story/39382888/light-therapy-for-seasonal-affective-disorder-tips-for-picking-the-right-light"
+					},
+					{
+						"url": "https://www.elitedaily.com/p/heres-how-daylight-saving-time-affects-your-mood-when-darkness-tries-to-steal-your-light-13034936"
+					},
+					{
+						"url": "https://lifehacker.com/how-to-manage-your-seasonal-depression-1829966671"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNFIioLp1TXUNA2CBR8Wc8O48w_aJg&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780083975855&ei=Jp_YW4DBFNaZ3QGp75jwDw&url=https://www.npr.org/sections/health-shots/2018/10/30/662127406/when-adolescents-give-up-pot-their-cognition-quickly-improves"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNFGJVlqSjNbXeiJw7QnmpwKGYyNVg&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780085140474&ei=AuLZW4DYNoSP3QHftI_oAQ&url=https://www.theblaze.com/news/2018/10/31/study-shows-cognition-improves-in-adolescents-who-stop-using-marijuana"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNEEHsbRsPB_f-tX6gN3vIgCaJqTxA&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780085140474&ei=VuzZW6C8II7o3AHKo4HgBA&url=http://news.prairiepublic.org/post/when-adolescents-give-pot-their-cognition-quickly-improves"
+					},
+					{
+						"url": "https://www.theguardian.com/society/2018/oct/30/quitting-cannabis-can-lead-better-memory-cognition-us-research"
+					},
+					{
+						"url": "https://www.webmd.com/parenting/news/20181030/in-teens-halting-pot-use-clears-thinking-issues?src=RSS_PUBLIC"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNHEl-9rKGBsSOkSfcPVew7q5M5B3Q&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780083837613&ei=ziPZW5D3HISP3QHftI_oAQ&url=https://www.webmd.com/sexual-conditions/news/20181030/the-real-reasons-parents-refuse-hpv-vaccination"
+					},
+					{
+						"url": "https://www.futurity.org/hpv-vaccine-parents-teenagers-1896712/"
+					},
+					{
+						"url": "https://www.scientificamerican.com/article/why-oral-cancer-threatens-men/"
+					},
+					{
+						"url": "https://www.upi.com/Health_News/2018/10/30/Safety-concerns-are-main-reason-parents-hesitate-on-HPV-vaccine/9161540928780/"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=us&usg=AFQjCNHLh7V3GfE_fHknUQpdefodgMYLPA&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084318818&ei=yvvYW4DZDNaZ3QGp75jwDw&url=https://www.cnn.com/2018/10/30/health/bmi-death-study/index.html"
+					},
+					{
+						"url": "http://rss.cnn.com/~r/rss/cnn_latest/~3/s7GkxvgmGLM/index.html"
+					},
+					{
+						"url": "https://www.eurekalert.org/pub_releases/2018-10/lsoh-bm103018.php"
+					},
+					{
+						"url": "https://tribune.com.pk/story/1838559/4-obese-skinny-can-cut-four-years-life-study/"
+					},
+					{
+						"url": "http://news.google.com/news/url?sa=t&fd=R&ct2=uk&usg=AFQjCNGBdtxlkAtzXmj-K-n69vTZW9ti8w&clid=c3a7d30bb8a4878e06b80cf16b898331&cid=52780084318818&ei=xz_ZW8DqG47o3AHKo4HgBA&url=https://www.thesun.co.uk/news/7624072/being-either-too-fat-or-too-skinny-can-significantly-increase-your-risk-of-dying-younger/"
+					},
+					{
+						"url": "https://www.theguardian.com/society/shortcuts/2018/oct/30/get-a-grip-are-smartphones-ruining-our-manual-dexterity"
+					},
+					{ "url": "https://www.bbc.co.uk/news/uk-46036095" },
+					{
+						"url": "https://www.newscientist.com/article/2184114-theres-no-evidence-that-screen-time-makes-surgeons-bad-at-their-job/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news&campaign_id=RSS%7CNSNS-news"
+					},
+					{
+						"url": "https://www.telegraph.co.uk/news/2018/10/30/surgery-students-cant-sew-cut-spend-much-time-screens-warns/"
+					},
+					{
+						"url": "https://www.theguardian.com/society/2018/oct/30/medical-students-raised-on-screens-lack-skills-for-surgery"
+					}
+				]
+			},
+			{
+				"label": "story__lifestyle",
+				"items": [
+					{
+						"url": "https://www.spin.com/2018/10/missy-elliot-the-rain-halloween-costume/"
+					},
+					{
+						"url": "https://www.celebitchy.com/598280/beyonce_went_all_out_as_phoni_braxton_for_halloween_links/"
+					},
+					{
+						"url": "http://www.popoholic.com/2018/11/01/jessica-lowndes-as-an-ultra-sexybloody-christmas-elf-for-halloween/"
+					},
+					{
+						"url": "http://feedproxy.google.com/~r/bossiprss/~3/7EB7L-XN7vE/"
+					},
+					{
+						"url": "http://feeds.celebritybabies.com/~r/celebrity-babies/~3/LkyDEhU4fJk/"
+					},
+					{
+						"url": "http://www.tmz.com/2018/10/30/kanye-west-donald-trump-used-blexit-candace-owens/"
+					},
+					{
+						"url": "https://www.spin.com/2018/10/kanye-out-of-politics-blexit-candace-owens/"
+					},
+					{
+						"url": "https://www.celebitchy.com/598171/the_boy_who_cried_maga_kanye_west_now_claims_he_was_being_used/"
+					},
+					{
+						"url": "https://pagesix.com/2018/10/30/kanye-says-hes-been-used-will-focus-on-art-from-now-on/"
+					},
+					{
+						"url": "http://feeds.celebritybabies.com/~r/celebrity-babies/~3/1Js5EJa_oX4/"
+					},
+					{
+						"url": "https://www.seattletimes.com/business/liz-weston-how-to-score-luxury-travel-for-less/?utm_source=RSS&utm_medium=Referral&utm_campaign=RSS_all"
+					},
+					{
+						"url": "https://www.dallasnews.com/business/personal-finance/2018/10/30/spend-little-add-lot-luxury-trip-tips"
+					},
+					{
+						"url": "http://feedproxy.google.com/~r/NerdwalletCreditCardWatch/~3/fGDbnsQT44Y/how-to-score-luxury-travel-for-less"
+					},
+					{
+						"url": "http://feedproxy.google.com/~r/NerdwalletCreditCardWatch/~3/5-PyWScJ17I/"
+					},
+					{
+						"url": "https://www.kicksonfire.com/nike-air-max-97-velvet-brown/"
+					},
+					{
+						"url": "https://www.kicksonfire.com/nike-air-vapormax-97-gs-atmosphere-grey/"
+					},
+					{
+						"url": "https://www.kicksonfire.com/nike-wmns-air-vapormax-2-racer-pink-racer-blue-release-date/"
+					},
+					{
+						"url": "https://www.kicksonfire.com/nike-air-max-1-og-anniversary-university-red-restock-november-2018/"
+					},
+					{
+						"url": "http://feeds.ign.com/~r/ign/all/~3/nq-W3DKwfWA/the-nutcracker-and-the-four-realms-review"
+					},
+					{
+						"url": "https://film.avclub.com/the-nutcracker-and-the-four-realms-is-another-flavorles-1830140852"
+					},
+					{
+						"url": "https://consequenceofsound.net/2018/11/film-review-the-nutcracker-and-the-four-realms/"
+					},
+					{
+						"url": "https://www.slashfilm.com/nutcracker-and-the-four-realms-review/"
+					},
+					{
+						"url": "http://feeds.reuters.com/~r/reuters/companyNews/~3/9JYh_Gz4rO8/disney-tells-a-different-nutcracker-story-on-the-big-screen-idUSL2N1X6246"
 					}
 				]
 			}
 		]
-	},
-	"options": {
-		"output": "percollate.pdf",
-		"individual": false,
-		"amp": true,
-		"sandbox": true
 	}
 }

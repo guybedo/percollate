@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const asyncPool = require('tiny-async-pool');
 const pup = require('puppeteer');
 const got = require('got');
 const { JSDOM } = require('jsdom');
@@ -83,14 +84,14 @@ async function cleanup(item, blueprint) {
 
 		if (!item.amp) {
 			item._url = item.url;
-		}
-		const amp = dom.window.document.querySelector('link[rel=amphtml]');
-		if (amp && blueprint.options.amp) {
-			spinner.succeed('Found AMP version');
-			return cleanup(
-				Object.assign({}, item, { url: amp.href, amp: amp.href }),
-				blueprint
-			);
+			const amp = dom.window.document.querySelector('link[rel=amphtml]');
+			if (amp && blueprint.options.amp) {
+				spinner.succeed('Found AMP version');
+				return cleanup(
+					Object.assign({}, item, { url: amp.href, amp: amp.href }),
+					blueprint
+				);
+			}
 		}
 
 		/* 
@@ -119,10 +120,14 @@ async function cleanup(item, blueprint) {
 			.toString(36)
 			.replace(/[^a-z]+/g, '')
 			.substr(2, 10);
-		return Object.assign({}, parsed, item, { _id: _id, img: img });
+		return Object.assign({}, parsed, item, {
+			_id: _id,
+			status: 'ok',
+			img: img
+		});
 	} catch (error) {
 		spinner.fail(error.message);
-		throw error;
+		return Object.assign({}, item, { status: 'ko' });
 	}
 }
 
@@ -131,8 +136,12 @@ async function cleanup(item, blueprint) {
 	--------------------------------
  */
 async function bundle(blueprint) {
-	spinner.start('Generating temporary HTML file');
 	const temp_file = tmp.tmpNameSync({ postfix: '.html' });
+	spinner.start(
+		`Generating temporary HTML file file://${temp_file} w/ ${
+			blueprint.document.items.length
+		} items`
+	);
 
 	const stylesheet = resolve(blueprint.document.css);
 	let style = fs.readFileSync(stylesheet, 'utf8');
@@ -157,13 +166,16 @@ async function bundle(blueprint) {
 		blueprint.document.groups = blueprint.document.groups.map(function(
 			group
 		) {
-			group.items = group.items.map(function(item) {
-				return itemIndex[item.url];
-			});
+			group.items = group.items
+				.filter(function(item) {
+					return itemIndex.indexOf(item.url) !== -1;
+				})
+				.map(function(item) {
+					return itemIndex[item.url];
+				});
 			return group;
 		});
 	}
-	console.log(blueprint);
 
 	const html = nunjucks.renderString(
 		fs.readFileSync(resolve(blueprint.document.template), 'utf8'),
@@ -214,13 +226,23 @@ async function bundle(blueprint) {
 
 	fs.writeFileSync(temp_file, html);
 
-	spinner.succeed(
-		`Processed ${
-			blueprint.document.items.length
-		} items, temporary HTML file: file://${temp_file}`
-	);
+	spinner.succeed(`Temporary HTML file: file://${temp_file}`);
 
-	spinner.start('Saving PDF');
+	/*
+		When no output path is present,
+		produce the file name from the web page title
+		(if a single page was sent as argument),
+		or a timestamped file (for the moment)
+		in case we're bundling many web pages.
+	 */
+	const output_path =
+		blueprint.options.output ||
+		(blueprint.document.items.length === 1
+			? `${slugify(
+					blueprint.document.items[0].title || 'Untitled page'
+			  )}.pdf`
+			: `percollate-${Date.now()}.pdf`);
+	spinner.start(`Saving PDF to file://${output_path}`);
 
 	const browser = await pup.launch({
 		headless: true,
@@ -241,22 +263,10 @@ async function bundle(blueprint) {
 		}
 	});
 	const page = await browser.newPage();
-	await page.goto(`file://${temp_file}`, { waitUntil: 'load' });
-
-	/*
-		When no output path is present,
-		produce the file name from the web page title
-		(if a single page was sent as argument), 
-		or a timestamped file (for the moment) 
-		in case we're bundling many web pages.
-	 */
-	const output_path =
-		blueprint.options.output ||
-		(blueprint.document.items.length === 1
-			? `${slugify(
-					blueprint.document.items[0].title || 'Untitled page'
-			  )}.pdf`
-			: `percollate-${Date.now()}.pdf`);
+	await page.goto(
+		`file://${temp_file}`,
+		Object.assign({}, { waitUntil: 'load' }, blueprint.pupeteer)
+	);
 
 	await page.pdf({
 		path: output_path,
@@ -272,6 +282,18 @@ async function bundle(blueprint) {
 	spinner.succeed(`Saved PDF: ${output_path}`);
 }
 
+async function prepareItems(blueprint) {
+	blueprint.document.items = await asyncPool(
+		blueprint.http.concurrency,
+		blueprint.document.items,
+		function(item) {
+			return cleanup(item, blueprint);
+		}
+	);
+	blueprint.document.items = blueprint.document.items.filter(
+		item => item.status === 'ok'
+	);
+}
 /*
 	Generate PDF
  */
@@ -281,17 +303,13 @@ async function pdf(urls, options) {
 		return;
 	}
 	spinner = log.spinner(blueprint.options.silent);
-	blueprint.document.items = await Promise.all(
-		blueprint.document.items.map(async function(item) {
-			return await cleanup(item, blueprint);
-		})
-	);
+	await prepareItems(blueprint);
 	if (blueprint.options.individual) {
 		await Promise.all(
 			blueprint.document.items.map(async function(item) {
 				let itemBlueprint = Object.assign({}, blueprint);
 				itemBlueprint.document.items = [item];
-				await bundle(blueprint);
+				await bundle(itemBlueprint);
 			})
 		);
 	} else {

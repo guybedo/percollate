@@ -95,6 +95,9 @@ article {
 	font-size: 1em;
 	page-break-after: always;
 }
+article article {
+	page-break-after: auto !important;
+}
 
 /*
 	Article Header
